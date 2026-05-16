@@ -64,8 +64,8 @@ export default function CalendarPage() {
           const shipCount = monthShipCount(monthKey)
 
           return (
-            <div key={monthKey}>
-              <div className="flex items-baseline justify-between mb-3">
+            <div key={monthKey} className="rounded-3xl border border-rule bg-paper p-5" style={{ boxShadow: '0 8px 24px -16px rgba(10,31,46,0.10)' }}>
+              <div className="flex items-baseline justify-between mb-4">
                 <h2 className="font-sans font-semibold text-[18px] text-ink">
                   {monthName}
                 </h2>

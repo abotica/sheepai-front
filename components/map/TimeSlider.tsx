@@ -177,7 +177,7 @@ export function TimeSlider({
         <button
           type="button"
           onClick={goNow}
-          className="inline-flex h-8 shrink-0 items-center justify-center rounded-full border border-rule bg-paper px-3 text-[10px] tracking-[0.16em] text-ink-dim transition-colors duration-150 hover:border-coral hover:text-coral sm:h-7 sm:text-[11px]"
+          className="inline-flex h-8 shrink-0 items-center justify-center rounded-full bg-coral px-3 text-[10px] tracking-[0.16em] font-semibold text-paper transition-opacity duration-150 hover:opacity-90 sm:h-7 sm:text-[11px]"
         >
           {copy.nowButton}
         </button>
@@ -189,7 +189,7 @@ export function TimeSlider({
           onClick={() => step(-1)}
           disabled={slotIndex === 0}
           aria-label="Prethodni interval"
-          className="flex size-9 shrink-0 items-center justify-center rounded-full border border-rule bg-paper text-ink-dim transition-colors duration-150 hover:border-coral hover:text-coral disabled:opacity-30 sm:size-10"
+          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink text-cream transition-opacity duration-150 hover:opacity-80 disabled:opacity-20 sm:size-10"
         >
           <span className="text-base leading-none">‹</span>
         </button>
@@ -245,7 +245,7 @@ export function TimeSlider({
           onClick={() => step(1)}
           disabled={slotIndex >= max}
           aria-label="Sljedeći interval"
-          className="flex size-9 shrink-0 items-center justify-center rounded-full border border-rule bg-paper text-ink-dim transition-colors duration-150 hover:border-coral hover:text-coral disabled:opacity-30 sm:size-10"
+          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink text-cream transition-opacity duration-150 hover:opacity-80 disabled:opacity-20 sm:size-10"
         >
           <span className="text-base leading-none">›</span>
         </button>
