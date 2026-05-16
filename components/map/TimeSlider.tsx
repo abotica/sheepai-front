@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ForecastFile, ShipEvent, ShipEventType } from "@/lib/forecast";
 import {
   findClosestSlotIndex,
@@ -143,6 +143,35 @@ export function TimeSlider({
   const step = (delta: number) =>
     onSlotChange(Math.max(0, Math.min(max, slotIndex + delta)));
 
+  // Keep refs so interval callbacks always read the latest values
+  const slotIndexRef = useRef(slotIndex);
+  const maxRef = useRef(max);
+  useEffect(() => { slotIndexRef.current = slotIndex; }, [slotIndex]);
+  useEffect(() => { maxRef.current = max; }, [max]);
+
+  const hold = useRef<{
+    timeout: ReturnType<typeof setTimeout> | null;
+    interval: ReturnType<typeof setInterval> | null;
+    active: boolean;
+  }>({ timeout: null, interval: null, active: false });
+
+  function startHold(delta: number) {
+    hold.current.active = false;
+    hold.current.timeout = setTimeout(() => {
+      hold.current.active = true;
+      hold.current.interval = setInterval(() => {
+        onSlotChange(Math.max(0, Math.min(maxRef.current, slotIndexRef.current + delta)));
+      }, 80);
+    }, 350);
+  }
+
+  function stopHold() {
+    if (hold.current.timeout) clearTimeout(hold.current.timeout);
+    if (hold.current.interval) clearInterval(hold.current.interval);
+    hold.current.timeout = null;
+    hold.current.interval = null;
+  }
+
   if (!currentSlot) return null;
 
   const denom = Math.max(1, max);
@@ -186,7 +215,11 @@ export function TimeSlider({
       <div className="flex items-center gap-1.5 sm:gap-3">
         <button
           type="button"
-          onClick={() => step(-1)}
+          onClick={() => { if (hold.current.active) { hold.current.active = false; return; } step(-1); }}
+          onPointerDown={() => startHold(-1)}
+          onPointerUp={stopHold}
+          onPointerLeave={stopHold}
+          onPointerCancel={stopHold}
           disabled={slotIndex === 0}
           aria-label="Prethodni interval"
           className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink text-cream transition-opacity duration-150 hover:opacity-80 disabled:opacity-20 sm:size-10"
@@ -242,7 +275,11 @@ export function TimeSlider({
 
         <button
           type="button"
-          onClick={() => step(1)}
+          onClick={() => { if (hold.current.active) { hold.current.active = false; return; } step(1); }}
+          onPointerDown={() => startHold(1)}
+          onPointerUp={stopHold}
+          onPointerLeave={stopHold}
+          onPointerCancel={stopHold}
           disabled={slotIndex >= max}
           aria-label="Sljedeći interval"
           className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink text-cream transition-opacity duration-150 hover:opacity-80 disabled:opacity-20 sm:size-10"
