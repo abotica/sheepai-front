@@ -66,7 +66,6 @@ export default function Home() {
         
         <MapPreview zones={zonesData as ZonesFile} slot={currentSlot as ForecastSlot} />
         <HomeHeader
-          city="Split"
           passengerCount={passengerCount}
           shipCount={shipCount}
           timeStart={timeStart}
