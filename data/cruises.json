@@ -1,0 +1,2051 @@
+{
+  "$schema_version": 1,
+  "generated_at": "2026-05-16T10:48:47.153Z",
+  "source": "cruisetimetables.com",
+  "year": 2026,
+  "ships": [
+    {
+      "id": "2026-05-16_msc-armonia",
+      "date": "2026-05-16",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-05-16_oosterdam",
+      "date": "2026-05-16",
+      "ship_name": "Oosterdam",
+      "cruise_line": "Holland America Line",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1964
+    },
+    {
+      "id": "2026-05-17_viking-sea",
+      "date": "2026-05-17",
+      "ship_name": "Viking Sea",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-05-18_seven-seas-grandeur",
+      "date": "2026-05-18",
+      "ship_name": "Seven Seas Grandeur",
+      "cruise_line": "Regent Seven Seas Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "19:00",
+      "passengers": 746
+    },
+    {
+      "id": "2026-05-19_azura",
+      "date": "2026-05-19",
+      "ship_name": "Azura",
+      "cruise_line": "P & O Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 3096
+    },
+    {
+      "id": "2026-05-19_viking-star",
+      "date": "2026-05-19",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-05-20_brilliance-of-the-seas",
+      "date": "2026-05-20",
+      "ship_name": "Brilliance Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "18:00",
+      "passengers": 2188
+    },
+    {
+      "id": "2026-05-20_oceania-sirena",
+      "date": "2026-05-20",
+      "ship_name": "Oceania Sirena",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "11:00",
+      "departure_time": "19:00",
+      "passengers": 684
+    },
+    {
+      "id": "2026-05-21_celebrity-ascent",
+      "date": "2026-05-21",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-05-22_explorer-of-the-seas",
+      "date": "2026-05-22",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-05-22_norwegian-gem",
+      "date": "2026-05-22",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-05-23_msc-armonia",
+      "date": "2026-05-23",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-05-26_marella-explorer-2",
+      "date": "2026-05-26",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-05-26_norwegian-gem",
+      "date": "2026-05-26",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-05-27_celebrity-constellation",
+      "date": "2026-05-27",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-05-28_norwegian-pearl",
+      "date": "2026-05-28",
+      "ship_name": "Norwegian Pearl",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "09:00",
+      "departure_time": "19:00",
+      "passengers": 2344
+    },
+    {
+      "id": "2026-05-29_costa-deliziosa",
+      "date": "2026-05-29",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-05-29_mein-schiff-4",
+      "date": "2026-05-29",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-05-30_celebrity-constellation",
+      "date": "2026-05-30",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-05-30_msc-armonia",
+      "date": "2026-05-30",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-06-04_oceania-sirena",
+      "date": "2026-06-04",
+      "ship_name": "Oceania Sirena",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 684
+    },
+    {
+      "id": "2026-06-05_explorer-of-the-seas",
+      "date": "2026-06-05",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-06-05_norwegian-gem",
+      "date": "2026-06-05",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-06-06_msc-armonia",
+      "date": "2026-06-06",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-06-06_queen-victoria",
+      "date": "2026-06-06",
+      "ship_name": "Queen Victoria",
+      "cruise_line": "Cunard Line",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 2060
+    },
+    {
+      "id": "2026-06-07_silver-muse",
+      "date": "2026-06-07",
+      "ship_name": "Silver Muse",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 632
+    },
+    {
+      "id": "2026-06-08_norwegian-gem",
+      "date": "2026-06-08",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-06-09_celebrity-ascent",
+      "date": "2026-06-09",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-06-10_marella-explorer-2",
+      "date": "2026-06-10",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-06-10_viking-star",
+      "date": "2026-06-10",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-06-11_oceania-allura",
+      "date": "2026-06-11",
+      "ship_name": "Oceania Allura",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "21:00",
+      "passengers": 1200
+    },
+    {
+      "id": "2026-06-11_viking-vesta",
+      "date": "2026-06-11",
+      "ship_name": "Viking Vesta",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-06-12_mein-schiff-4",
+      "date": "2026-06-12",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-06-13_msc-armonia",
+      "date": "2026-06-13",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-06-14_oceania-allura",
+      "date": "2026-06-14",
+      "ship_name": "Oceania Allura",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "19:00",
+      "passengers": 1200
+    },
+    {
+      "id": "2026-06-15_seven-seas-voyager",
+      "date": "2026-06-15",
+      "ship_name": "Seven Seas Voyager",
+      "cruise_line": "Regent Seven Seas Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "16:00",
+      "passengers": 708
+    },
+    {
+      "id": "2026-06-16_marella-voyager",
+      "date": "2026-06-16",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-06-17_britannia",
+      "date": "2026-06-17",
+      "ship_name": "Britannia",
+      "cruise_line": "P & O Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 3648
+    },
+    {
+      "id": "2026-06-17_celebrity-constellation",
+      "date": "2026-06-17",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-06-18_viking-sea",
+      "date": "2026-06-18",
+      "ship_name": "Viking Sea",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-06-19_explorer-of-the-seas",
+      "date": "2026-06-19",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-06-19_norwegian-gem",
+      "date": "2026-06-19",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-06-20_celebrity-constellation",
+      "date": "2026-06-20",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-06-20_msc-armonia",
+      "date": "2026-06-20",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-06-22_norwegian-gem",
+      "date": "2026-06-22",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-06-23_marella-explorer-2",
+      "date": "2026-06-23",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-06-26_costa-deliziosa",
+      "date": "2026-06-26",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-06-26_mein-schiff-4",
+      "date": "2026-06-26",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-06-27_msc-armonia",
+      "date": "2026-06-27",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-06-30_viking-star",
+      "date": "2026-06-30",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-07-01_brilliance-of-the-seas",
+      "date": "2026-07-01",
+      "ship_name": "Brilliance Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "18:00",
+      "passengers": 2188
+    },
+    {
+      "id": "2026-07-01_silver-muse",
+      "date": "2026-07-01",
+      "ship_name": "Silver Muse",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 632
+    },
+    {
+      "id": "2026-07-02_celebrity-ascent",
+      "date": "2026-07-02",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-07-02_norwegian-viva",
+      "date": "2026-07-02",
+      "ship_name": "Norwegian Viva",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 3100
+    },
+    {
+      "id": "2026-07-03_explorer-of-the-seas",
+      "date": "2026-07-03",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-07-03_norwegian-gem",
+      "date": "2026-07-03",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-07-04_msc-armonia",
+      "date": "2026-07-04",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-07-04_queen-victoria",
+      "date": "2026-07-04",
+      "ship_name": "Queen Victoria",
+      "cruise_line": "Cunard Line",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 2060
+    },
+    {
+      "id": "2026-07-05_viking-vesta",
+      "date": "2026-07-05",
+      "ship_name": "Viking Vesta",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-07-07_marella-explorer-2",
+      "date": "2026-07-07",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-07-08_celebrity-constellation",
+      "date": "2026-07-08",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-07-08_marella-voyager",
+      "date": "2026-07-08",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "19:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-07-10_costa-deliziosa",
+      "date": "2026-07-10",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-07-10_mein-schiff-4",
+      "date": "2026-07-10",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-07-11_celebrity-constellation",
+      "date": "2026-07-11",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-07-11_msc-armonia",
+      "date": "2026-07-11",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-07-12_viking-sea",
+      "date": "2026-07-12",
+      "ship_name": "Viking Sea",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-07-14_aidablu",
+      "date": "2026-07-14",
+      "ship_name": "AIDAblu",
+      "cruise_line": "AIDA",
+      "arrival_time": "10:00",
+      "departure_time": "19:00",
+      "passengers": 2174
+    },
+    {
+      "id": "2026-07-16_scarlet-lady",
+      "date": "2026-07-16",
+      "ship_name": "Scarlet Lady",
+      "cruise_line": "Virgin Voyages",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 2860
+    },
+    {
+      "id": "2026-07-17_explorer-of-the-seas",
+      "date": "2026-07-17",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-07-17_norwegian-gem",
+      "date": "2026-07-17",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-07-18_marella-explorer-2",
+      "date": "2026-07-18",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-07-18_msc-armonia",
+      "date": "2026-07-18",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-07-19_silver-muse",
+      "date": "2026-07-19",
+      "ship_name": "Silver Muse",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 632
+    },
+    {
+      "id": "2026-07-20_norwegian-gem",
+      "date": "2026-07-20",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-07-21_celebrity-ascent",
+      "date": "2026-07-21",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-07-21_marella-voyager",
+      "date": "2026-07-21",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "19:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-07-22_viking-star",
+      "date": "2026-07-22",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-07-23_silver-muse",
+      "date": "2026-07-23",
+      "ship_name": "Silver Muse",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 632
+    },
+    {
+      "id": "2026-07-24_mein-schiff-4",
+      "date": "2026-07-24",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-07-24_norwegian-pearl",
+      "date": "2026-07-24",
+      "ship_name": "Norwegian Pearl",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2344
+    },
+    {
+      "id": "2026-07-25_msc-armonia",
+      "date": "2026-07-25",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-07-26_wind-surf",
+      "date": "2026-07-26",
+      "ship_name": "Wind Surf",
+      "cruise_line": "Windstar Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 342
+    },
+    {
+      "id": "2026-07-27_azura",
+      "date": "2026-07-27",
+      "ship_name": "Azura",
+      "cruise_line": "P & O Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 3096
+    },
+    {
+      "id": "2026-07-29_celebrity-constellation",
+      "date": "2026-07-29",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-07-31_explorer-of-the-seas",
+      "date": "2026-07-31",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-07-31_norwegian-gem",
+      "date": "2026-07-31",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-07-31_silver-nova",
+      "date": "2026-07-31",
+      "ship_name": "Silver Nova",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 728
+    },
+    {
+      "id": "2026-08-01_celebrity-constellation",
+      "date": "2026-08-01",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-08-01_msc-armonia",
+      "date": "2026-08-01",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-08-04_aidablu",
+      "date": "2026-08-04",
+      "ship_name": "AIDAblu",
+      "cruise_line": "AIDA",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2174
+    },
+    {
+      "id": "2026-08-04_marella-explorer-2",
+      "date": "2026-08-04",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "18:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-08-05_norwegian-gem",
+      "date": "2026-08-05",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "14:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-08-06_seabourn-quest",
+      "date": "2026-08-06",
+      "ship_name": "Seabourn Quest",
+      "cruise_line": "Seabourn",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 450
+    },
+    {
+      "id": "2026-08-06_viking-vesta",
+      "date": "2026-08-06",
+      "ship_name": "Viking Vesta",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-08-07_costa-deliziosa",
+      "date": "2026-08-07",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-08-07_mein-schiff-4",
+      "date": "2026-08-07",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-08-08_msc-armonia",
+      "date": "2026-08-08",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-08-08_oceania-nautica",
+      "date": "2026-08-08",
+      "ship_name": "Oceania Nautica",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 690
+    },
+    {
+      "id": "2026-08-09_norwegian-viva",
+      "date": "2026-08-09",
+      "ship_name": "Norwegian Viva",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 3100
+    },
+    {
+      "id": "2026-08-10_marella-voyager",
+      "date": "2026-08-10",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-08-11_viking-star",
+      "date": "2026-08-11",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-08-12_brilliance-of-the-seas",
+      "date": "2026-08-12",
+      "ship_name": "Brilliance Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "18:00",
+      "passengers": 2188
+    },
+    {
+      "id": "2026-08-13_celebrity-ascent",
+      "date": "2026-08-13",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-08-13_viking-sea",
+      "date": "2026-08-13",
+      "ship_name": "Viking Sea",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-08-14_explorer-of-the-seas",
+      "date": "2026-08-14",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-08-14_norwegian-gem",
+      "date": "2026-08-14",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-08-15_msc-armonia",
+      "date": "2026-08-15",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-08-17_norwegian-gem",
+      "date": "2026-08-17",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-08-18_marella-explorer-2",
+      "date": "2026-08-18",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-08-19_celebrity-constellation",
+      "date": "2026-08-19",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-08-20_wind-surf",
+      "date": "2026-08-20",
+      "ship_name": "Wind Surf",
+      "cruise_line": "Windstar Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 342
+    },
+    {
+      "id": "2026-08-21_costa-deliziosa",
+      "date": "2026-08-21",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-08-21_mein-schiff-4",
+      "date": "2026-08-21",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-08-22_celebrity-constellation",
+      "date": "2026-08-22",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-08-22_msc-armonia",
+      "date": "2026-08-22",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-08-23_europa-2",
+      "date": "2026-08-23",
+      "ship_name": "Europa 2",
+      "cruise_line": "Hapag Lloyd",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 516
+    },
+    {
+      "id": "2026-08-25_marella-voyager",
+      "date": "2026-08-25",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-08-27_norwegian-viva",
+      "date": "2026-08-27",
+      "ship_name": "Norwegian Viva",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 3100
+    },
+    {
+      "id": "2026-08-28_explorer-of-the-seas",
+      "date": "2026-08-28",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-08-28_norwegian-gem",
+      "date": "2026-08-28",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-08-29_msc-armonia",
+      "date": "2026-08-29",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-08-29_queen-victoria",
+      "date": "2026-08-29",
+      "ship_name": "Queen Victoria",
+      "cruise_line": "Cunard Line",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 2060
+    },
+    {
+      "id": "2026-08-30_viking-vesta",
+      "date": "2026-08-30",
+      "ship_name": "Viking Vesta",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-08-31_norwegian-gem",
+      "date": "2026-08-31",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-09-01_marella-explorer-2",
+      "date": "2026-09-01",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-09-02_renaissance",
+      "date": "2026-09-02",
+      "ship_name": "Renaissance",
+      "cruise_line": "CFC Croisieres",
+      "arrival_time": "07:00",
+      "departure_time": "22:00",
+      "passengers": 1358
+    },
+    {
+      "id": "2026-09-02_viking-star",
+      "date": "2026-09-02",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-09-03_celebrity-ascent",
+      "date": "2026-09-03",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-09-04_mein-schiff-4",
+      "date": "2026-09-04",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-09-05_msc-armonia",
+      "date": "2026-09-05",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-09-06_viking-sea",
+      "date": "2026-09-06",
+      "ship_name": "Viking Sea",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-09-08_marella-voyager",
+      "date": "2026-09-08",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-09-08_wind-surf",
+      "date": "2026-09-08",
+      "ship_name": "Wind Surf",
+      "cruise_line": "Windstar Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 342
+    },
+    {
+      "id": "2026-09-09_celebrity-constellation",
+      "date": "2026-09-09",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-09-10_seven-seas-navigator",
+      "date": "2026-09-10",
+      "ship_name": "Seven Seas Navigator",
+      "cruise_line": "Regent Seven Seas Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 496
+    },
+    {
+      "id": "2026-09-11_explorer-of-the-seas",
+      "date": "2026-09-11",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-09-11_norwegian-gem",
+      "date": "2026-09-11",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-09-12_msc-armonia",
+      "date": "2026-09-12",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-09-14_norwegian-gem",
+      "date": "2026-09-14",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-09-15_marella-explorer-2",
+      "date": "2026-09-15",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-09-18_costa-deliziosa",
+      "date": "2026-09-18",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-09-18_mein-schiff-4",
+      "date": "2026-09-18",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-09-19_enchanted-princess",
+      "date": "2026-09-19",
+      "ship_name": "Enchanted Princess",
+      "cruise_line": "Princess Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "16:00",
+      "passengers": 3660
+    },
+    {
+      "id": "2026-09-19_msc-armonia",
+      "date": "2026-09-19",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-09-21_wind-surf",
+      "date": "2026-09-21",
+      "ship_name": "Wind Surf",
+      "cruise_line": "Windstar Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 342
+    },
+    {
+      "id": "2026-09-22_marella-voyager",
+      "date": "2026-09-22",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-09-22_viking-star",
+      "date": "2026-09-22",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-09-23_brilliance-of-the-seas",
+      "date": "2026-09-23",
+      "ship_name": "Brilliance Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "18:00",
+      "passengers": 2188
+    },
+    {
+      "id": "2026-09-24_celebrity-ascent",
+      "date": "2026-09-24",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-09-25_explorer-of-the-seas",
+      "date": "2026-09-25",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-09-25_oosterdam",
+      "date": "2026-09-25",
+      "ship_name": "Oosterdam",
+      "cruise_line": "Holland America Line",
+      "arrival_time": "07:00",
+      "departure_time": "16:00",
+      "passengers": 1964
+    },
+    {
+      "id": "2026-09-26_msc-armonia",
+      "date": "2026-09-26",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-09-27_azura",
+      "date": "2026-09-27",
+      "ship_name": "Azura",
+      "cruise_line": "P & O Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 3096
+    },
+    {
+      "id": "2026-09-27_celebrity-eclipse",
+      "date": "2026-09-27",
+      "ship_name": "Celebrity Eclipse",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2852
+    },
+    {
+      "id": "2026-09-29_celebrity-eclipse",
+      "date": "2026-09-29",
+      "ship_name": "Celebrity Eclipse",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2852
+    },
+    {
+      "id": "2026-09-29_marella-explorer-2",
+      "date": "2026-09-29",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "18:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-09-30_celebrity-constellation",
+      "date": "2026-09-30",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-10-01_seabourn-quest",
+      "date": "2026-10-01",
+      "ship_name": "Seabourn Quest",
+      "cruise_line": "Seabourn",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 450
+    },
+    {
+      "id": "2026-10-01_viking-vesta",
+      "date": "2026-10-01",
+      "ship_name": "Viking Vesta",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-10-02_costa-deliziosa",
+      "date": "2026-10-02",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-10-02_mein-schiff-4",
+      "date": "2026-10-02",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-10-03_celebrity-constellation",
+      "date": "2026-10-03",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-10-03_msc-armonia",
+      "date": "2026-10-03",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-10-04_azamara-onward",
+      "date": "2026-10-04",
+      "ship_name": "Azamara Onward",
+      "cruise_line": "Azamara Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "22:00",
+      "passengers": 670
+    },
+    {
+      "id": "2026-10-04_norwegian-viva",
+      "date": "2026-10-04",
+      "ship_name": "Norwegian Viva",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 3100
+    },
+    {
+      "id": "2026-10-05_carnival-legend",
+      "date": "2026-10-05",
+      "ship_name": "Carnival Legend",
+      "cruise_line": "Carnival Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2124
+    },
+    {
+      "id": "2026-10-05_silver-muse",
+      "date": "2026-10-05",
+      "ship_name": "Silver Muse",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 632
+    },
+    {
+      "id": "2026-10-06_europa",
+      "date": "2026-10-06",
+      "ship_name": "Europa",
+      "cruise_line": "Hapag Lloyd",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 408
+    },
+    {
+      "id": "2026-10-06_oceania-allura",
+      "date": "2026-10-06",
+      "ship_name": "Oceania Allura",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "16:00",
+      "passengers": 1200
+    },
+    {
+      "id": "2026-10-07_aidablu",
+      "date": "2026-10-07",
+      "ship_name": "AIDAblu",
+      "cruise_line": "AIDA",
+      "arrival_time": "09:00",
+      "departure_time": "18:00",
+      "passengers": 2174
+    },
+    {
+      "id": "2026-10-09_costa-deliziosa",
+      "date": "2026-10-09",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-10-09_explorer-of-the-seas",
+      "date": "2026-10-09",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-10-10_marella-explorer-2",
+      "date": "2026-10-10",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-10-10_msc-armonia",
+      "date": "2026-10-10",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-10-11_viking-sea",
+      "date": "2026-10-11",
+      "ship_name": "Viking Sea",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-10-12_norwegian-gem",
+      "date": "2026-10-12",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-10-13_celebrity-ascent",
+      "date": "2026-10-13",
+      "ship_name": "Celebrity Ascent",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "20:00",
+      "passengers": 3260
+    },
+    {
+      "id": "2026-10-13_mein-schiff-4",
+      "date": "2026-10-13",
+      "ship_name": "Mein Schiff 4",
+      "cruise_line": "TUI Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2506
+    },
+    {
+      "id": "2026-10-14_viking-star",
+      "date": "2026-10-14",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-10-15_silver-spirit",
+      "date": "2026-10-15",
+      "ship_name": "Silver Spirit",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 636
+    },
+    {
+      "id": "2026-10-16_explorer-of-the-seas",
+      "date": "2026-10-16",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-10-17_msc-armonia",
+      "date": "2026-10-17",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-10-17_viking-vesta",
+      "date": "2026-10-17",
+      "ship_name": "Viking Vesta",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-10-17_wind-surf",
+      "date": "2026-10-17",
+      "ship_name": "Wind Surf",
+      "cruise_line": "Windstar Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 342
+    },
+    {
+      "id": "2026-10-18_celebrity-eclipse",
+      "date": "2026-10-18",
+      "ship_name": "Celebrity Eclipse",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 2852
+    },
+    {
+      "id": "2026-10-19_seven-seas-voyager",
+      "date": "2026-10-19",
+      "ship_name": "Seven Seas Voyager",
+      "cruise_line": "Regent Seven Seas Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "18:00",
+      "passengers": 708
+    },
+    {
+      "id": "2026-10-20_celebrity-eclipse",
+      "date": "2026-10-20",
+      "ship_name": "Celebrity Eclipse",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 2852
+    },
+    {
+      "id": "2026-10-20_marella-voyager",
+      "date": "2026-10-20",
+      "ship_name": "Marella Voyager",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1912
+    },
+    {
+      "id": "2026-10-21_celebrity-constellation",
+      "date": "2026-10-21",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-10-22_balmoral",
+      "date": "2026-10-22",
+      "ship_name": "Balmoral",
+      "cruise_line": "Fred Olsen Cruise Lines",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 1325
+    },
+    {
+      "id": "2026-10-23_costa-deliziosa",
+      "date": "2026-10-23",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-10-23_explorer-of-the-seas",
+      "date": "2026-10-23",
+      "ship_name": "Explorer Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 3114
+    },
+    {
+      "id": "2026-10-24_celebrity-constellation",
+      "date": "2026-10-24",
+      "ship_name": "Celebrity Constellation",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-10-24_msc-armonia",
+      "date": "2026-10-24",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-10-25_brilliance-of-the-seas",
+      "date": "2026-10-25",
+      "ship_name": "Brilliance Of The Seas",
+      "cruise_line": "Royal Caribbean Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "16:00",
+      "passengers": 2188
+    },
+    {
+      "id": "2026-10-25_oceania-insignia",
+      "date": "2026-10-25",
+      "ship_name": "Oceania Insignia",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 684
+    },
+    {
+      "id": "2026-10-26_norwegian-gem",
+      "date": "2026-10-26",
+      "ship_name": "Norwegian Gem",
+      "cruise_line": "Norwegian Cruise Line",
+      "arrival_time": "07:00",
+      "departure_time": "18:00",
+      "passengers": 2394
+    },
+    {
+      "id": "2026-10-26_spirit-of-discovery",
+      "date": "2026-10-26",
+      "ship_name": "Spirit Of Discovery",
+      "cruise_line": "Saga Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "19:00",
+      "passengers": 999
+    },
+    {
+      "id": "2026-10-27_marella-explorer-2",
+      "date": "2026-10-27",
+      "ship_name": "Marella Explorer 2",
+      "cruise_line": "Marella Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1814
+    },
+    {
+      "id": "2026-10-29_carnival-legend",
+      "date": "2026-10-29",
+      "ship_name": "Carnival Legend",
+      "cruise_line": "Carnival Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2124
+    },
+    {
+      "id": "2026-10-30_costa-deliziosa",
+      "date": "2026-10-30",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-10-31_msc-armonia",
+      "date": "2026-10-31",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-11-01_viking-neptune",
+      "date": "2026-11-01",
+      "ship_name": "Viking Neptune",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-11-02_msc-armonia",
+      "date": "2026-11-02",
+      "ship_name": "MSC Armonia",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "16:00",
+      "passengers": 1952
+    },
+    {
+      "id": "2026-11-02_viking-sky",
+      "date": "2026-11-02",
+      "ship_name": "Viking Sky",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-11-03_msc-lirica",
+      "date": "2026-11-03",
+      "ship_name": "MSC Lirica",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "17:00",
+      "passengers": 1984
+    },
+    {
+      "id": "2026-11-05_celebrity-infinity",
+      "date": "2026-11-05",
+      "ship_name": "Celebrity Infinity",
+      "cruise_line": "Celebrity Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "19:00",
+      "passengers": 1950
+    },
+    {
+      "id": "2026-11-05_enchanted-princess",
+      "date": "2026-11-05",
+      "ship_name": "Enchanted Princess",
+      "cruise_line": "Princess Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "19:00",
+      "passengers": 3660
+    },
+    {
+      "id": "2026-11-06_costa-deliziosa",
+      "date": "2026-11-06",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-11-06_island-princess",
+      "date": "2026-11-06",
+      "ship_name": "Island Princess",
+      "cruise_line": "Princess Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "17:00",
+      "passengers": 1974
+    },
+    {
+      "id": "2026-11-09_seven-seas-voyager",
+      "date": "2026-11-09",
+      "ship_name": "Seven Seas Voyager",
+      "cruise_line": "Regent Seven Seas Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "16:00",
+      "passengers": 708
+    },
+    {
+      "id": "2026-11-09_viking-mira",
+      "date": "2026-11-09",
+      "ship_name": "Viking Mira",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-11-10_bolette",
+      "date": "2026-11-10",
+      "ship_name": "Bolette",
+      "cruise_line": "Fred Olsen Cruise Lines",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 1338
+    },
+    {
+      "id": "2026-11-11_seven-seas-voyager",
+      "date": "2026-11-11",
+      "ship_name": "Seven Seas Voyager",
+      "cruise_line": "Regent Seven Seas Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "18:00",
+      "passengers": 708
+    },
+    {
+      "id": "2026-11-11_silver-nova",
+      "date": "2026-11-11",
+      "ship_name": "Silver Nova",
+      "cruise_line": "Silversea Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 728
+    },
+    {
+      "id": "2026-11-13_costa-deliziosa",
+      "date": "2026-11-13",
+      "ship_name": "Costa Deliziosa",
+      "cruise_line": "Costa Cruises",
+      "arrival_time": "08:00",
+      "departure_time": "17:00",
+      "passengers": 2826
+    },
+    {
+      "id": "2026-11-14_msc-lirica",
+      "date": "2026-11-14",
+      "ship_name": "MSC Lirica",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "17:00",
+      "passengers": 1984
+    },
+    {
+      "id": "2026-11-18_ambience",
+      "date": "2026-11-18",
+      "ship_name": "Ambience",
+      "cruise_line": "Ambassador Cruise Line",
+      "arrival_time": "08:00",
+      "departure_time": "23:00",
+      "passengers": 1400
+    },
+    {
+      "id": "2026-11-19_seven-seas-voyager",
+      "date": "2026-11-19",
+      "ship_name": "Seven Seas Voyager",
+      "cruise_line": "Regent Seven Seas Cruises",
+      "arrival_time": "10:00",
+      "departure_time": "17:00",
+      "passengers": 708
+    },
+    {
+      "id": "2026-11-25_msc-lirica",
+      "date": "2026-11-25",
+      "ship_name": "MSC Lirica",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "17:00",
+      "passengers": 1984
+    },
+    {
+      "id": "2026-11-25_oceania-sirena",
+      "date": "2026-11-25",
+      "ship_name": "Oceania Sirena",
+      "cruise_line": "Oceania Cruises",
+      "arrival_time": "07:00",
+      "departure_time": "19:00",
+      "passengers": 684
+    },
+    {
+      "id": "2026-11-27_viking-vesta",
+      "date": "2026-11-27",
+      "ship_name": "Viking Vesta",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 998
+    },
+    {
+      "id": "2026-12-03_viking-star",
+      "date": "2026-12-03",
+      "ship_name": "Viking Star",
+      "cruise_line": "Viking Cruises",
+      "arrival_time": null,
+      "departure_time": null,
+      "passengers": 930
+    },
+    {
+      "id": "2026-12-06_msc-lirica",
+      "date": "2026-12-06",
+      "ship_name": "MSC Lirica",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "17:00",
+      "passengers": 1984
+    },
+    {
+      "id": "2026-12-16_msc-lirica",
+      "date": "2026-12-16",
+      "ship_name": "MSC Lirica",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "17:00",
+      "passengers": 1984
+    },
+    {
+      "id": "2026-12-27_msc-lirica",
+      "date": "2026-12-27",
+      "ship_name": "MSC Lirica",
+      "cruise_line": "MSC Cruises",
+      "arrival_time": "09:00",
+      "departure_time": "17:00",
+      "passengers": 1984
+    }
+  ]
+}
