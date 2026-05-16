@@ -6,7 +6,7 @@ export const nav = {
 }
 
 export const home = {
-  dateLabel: (city: string) => `DANAS · ${city.toUpperCase()}`,
+  dateLabel: () => `DANAS`,
   passengerSuffix: "putnika",
   shipsInPort: (count: number, start: string, end: string) =>
     `${count} ${count === 1 ? "kruzer" : "kruzera"} u luci · ${start}–${end}`,

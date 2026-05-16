@@ -1,8 +1,8 @@
+import { Video } from "lucide-react";
 import { home } from "@/lib/copy";
 import { AnimatedCount } from "@/components/AnimatedCount";
 
 interface HomeHeaderProps {
-  city: string;
   passengerCount: number;
   shipCount: number;
   timeStart: string | null;
@@ -10,7 +10,6 @@ interface HomeHeaderProps {
 }
 
 export function HomeHeader({
-  city,
   passengerCount,
   shipCount,
   timeStart,
@@ -19,13 +18,22 @@ export function HomeHeader({
   return (
     <header className="px-5 pt-8 pb-6">
       <div className="flex items-center gap-2 mb-3">
-        <span className="w-[6px] h-[6px] rounded-full bg-coral shrink-0" />
         <p
           className="font-sans text-[11px] font-medium text-ink-dim uppercase"
           style={{ letterSpacing: "0.22em" }}
         >
-          {home.dateLabel(city)}
+          {home.dateLabel()}
         </p>
+        <span className="text-ink-dim text-[16px] leading-none">·</span>
+        <a
+          href="https://m.hak.hr/kamera.asp?g=5&k=31"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center"
+          aria-label="Live kamera luke"
+        >
+          <Video size={12} color="#D9614B" strokeWidth={2} />
+        </a>
       </div>
 
       <h1
