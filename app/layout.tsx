@@ -33,7 +33,7 @@ export default function RootLayout({
       lang="hr"
       className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="h-full flex flex-col bg-surface text-ink">
+      <body className="h-full flex flex-col bg-cream text-ink">
         <Navbar />
         {children}
       </body>

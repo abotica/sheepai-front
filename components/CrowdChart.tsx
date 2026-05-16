@@ -1,15 +1,15 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Users } from 'lucide-react'
-import { BarChart, Bar, XAxis, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, ResponsiveContainer, ReferenceLine } from 'recharts'
 import { crowdLevel } from '@/lib/copy'
 
 const data = [
-  { hour: '6', load: 200 },
-  { hour: '7', load: 450 },
-  { hour: '8', load: 1200 },
-  { hour: '9', load: 2800 },
+  { hour: '6',  load: 200 },
+  { hour: '7',  load: 450 },
+  { hour: '8',  load: 1200 },
+  { hour: '9',  load: 2800 },
   { hour: '10', load: 4500 },
   { hour: '11', load: 5200 },
   { hour: '12', load: 4800 },
@@ -23,9 +23,14 @@ const data = [
 ]
 
 const maxLoad = Math.max(...data.map(d => d.load))
+const CURRENT_HOUR = '11'
 
-function formatHour(hour: string): string {
-  return `${parseInt(hour, 10)}:00`
+function toAmPm(hour: string): string {
+  const h = parseInt(hour, 10)
+  if (h === 0) return '12AM'
+  if (h < 12) return `${h}AM`
+  if (h === 12) return '12PM'
+  return `${h - 12}PM`
 }
 
 type ShapeProps = {
@@ -37,98 +42,111 @@ type ShapeProps = {
   payload?: { hour: string; load: number }
 }
 
-type BarPos = { x: number; width: number; containerWidth: number }
 
-// Estimated half-width of the tooltip label in px — used to clamp against edges.
-const TOOLTIP_HALF_W = 72
+type BarPos = { x: number; width: number }
 
 export function CrowdChart() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [activeBarPos, setActiveBarPos] = useState<BarPos | null>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [nowLabel, setNowLabel] = useState('')
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      const d = new Date()
+      setNowLabel(
+        `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+      )
+    }, 0)
+    return () => clearTimeout(id)
+  }, [])
 
   const activeItem = activeIndex !== null ? data[activeIndex] : null
 
-  const tooltipLeft = activeBarPos
-    ? Math.max(
-        TOOLTIP_HALF_W,
-        Math.min(
-          activeBarPos.containerWidth - TOOLTIP_HALF_W,
-          activeBarPos.x + activeBarPos.width / 2,
-        ),
-      )
-    : 0
-
   return (
-    <div className="w-full px-5">
-      <div ref={containerRef} className="relative overflow-visible" style={{ height: 200 }}>
-        {activeItem && activeBarPos && (
-          <div
-            className="absolute top-0 z-10 pointer-events-none"
-            style={{ left: tooltipLeft, transform: 'translateX(-50%)' }}
+    <div className="px-5 mt-2">
+      <div className="rounded-3xl border border-rule bg-paper p-5">
+        <div className="flex items-center justify-between mb-4">
+          <span
+            className="font-sans text-[11px] font-semibold text-ink-dim uppercase"
+            style={{ letterSpacing: '0.18em' }}
           >
-            <div className="flex items-center gap-1 whitespace-nowrap">
-              <Users size={12} className="text-brand" />
-              <span className="font-sans text-[11px] font-semibold text-ink">
-                {formatHour(activeItem.hour)}:
-              </span>
-              <span className="font-sans text-[11px] text-ink-secondary">
-                {crowdLevel(activeItem.load)}
-              </span>
-            </div>
+            Gustoća po satu
+          </span>
+          <div className="flex items-center gap-1.5">
+            <span className="w-[5px] h-[5px] rounded-full bg-coral block" />
+            <span suppressHydrationWarning className="font-mono text-[11px] text-coral">
+              {nowLabel} sada
+            </span>
           </div>
-        )}
+        </div>
 
-        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
-          <BarChart
-            data={data}
-            barCategoryGap={4}
-            margin={{ top: 28, right: 0, bottom: 0, left: 0 }}
-          >
-            <XAxis
-              dataKey="hour"
-              axisLine={false}
-              tickLine={false}
-              tick={{ fill: '#A1A1AA', fontSize: 11, fontFamily: 'var(--font-inter)' }}
-              interval={2}
-            />
-            <Bar
-              dataKey="load"
-              shape={(props: ShapeProps) => {
-                const { x = 0, y = 0, width = 0, height = 0, payload, index = 0 } = props
-                if (!payload || width <= 0 || height <= 0) return <g />
-
-                const isMax = payload.load === maxLoad
-                const isActive = index === activeIndex
-                const fill = isMax ? '#DC2626' : '#0F4C75'
-                const r = 3
-                const d =
-                  `M ${x + r},${y} ` +
-                  `L ${x + width - r},${y} ` +
-                  `Q ${x + width},${y} ${x + width},${y + r} ` +
-                  `L ${x + width},${y + height} ` +
-                  `L ${x},${y + height} ` +
-                  `L ${x},${y + r} ` +
-                  `Q ${x},${y} ${x + r},${y} Z`
-
-                return (
-                  <path
-                    d={d}
-                    fill={fill}
-                    opacity={isActive ? 1 : 0.65}
-                    onClick={() => {
-                      const next = activeIndex === index ? null : index
-                      setActiveIndex(next)
-                      const containerWidth = containerRef.current?.offsetWidth ?? 0
-                      setActiveBarPos(next !== null ? { x, width, containerWidth } : null)
-                    }}
-                    style={{ cursor: 'pointer', outline: 'none' }}
-                  />
-                )
+        <div className="relative overflow-hidden" style={{ height: 160 }}>
+          {activeItem && activeBarPos && (
+            <div
+              className="absolute top-0 z-10 pointer-events-none"
+              style={{
+                left: `clamp(75px, ${activeBarPos.x + activeBarPos.width / 2}px, calc(100% - 75px))`,
+                transform: 'translateX(-50%)',
               }}
-            />
-          </BarChart>
-        </ResponsiveContainer>
+            >
+              <div className="flex items-center gap-1 whitespace-nowrap">
+                <Users size={11} color="#1E88E5" />
+                <span className="font-sans text-[11px] font-semibold text-ink">{toAmPm(activeItem.hour)}:</span>
+                <span className="font-sans text-[11px] text-ink-dim">{crowdLevel(activeItem.load)}</span>
+              </div>
+            </div>
+          )}
+          <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+            <BarChart
+              data={data}
+              barCategoryGap={5}
+              margin={{ top: 24, right: 0, bottom: 0, left: 0 }}
+            >
+              <XAxis
+                dataKey="hour"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fill: '#5A6B78', fontSize: 10, fontFamily: 'var(--font-mono)' }}
+                interval={2}
+              />
+              <ReferenceLine y={maxLoad * 0.5} stroke="#E8E0D2" strokeWidth={1} />
+              <Bar
+                dataKey="load"
+                shape={(props: ShapeProps) => {
+                  const { x = 0, y = 0, width = 0, height = 0, payload, index = 0 } = props
+                  if (!payload || width <= 0 || height <= 0) return <g />
+
+                  const isCurrent = payload.hour === CURRENT_HOUR
+                  const isActive = index === activeIndex
+                  const fill = isCurrent ? '#D9614B' : '#7E9AA8'
+                  const r = 3
+                  const d =
+                    `M ${x + r},${y} ` +
+                    `L ${x + width - r},${y} ` +
+                    `Q ${x + width},${y} ${x + width},${y + r} ` +
+                    `L ${x + width},${y + height} ` +
+                    `L ${x},${y + height} ` +
+                    `L ${x},${y + r} ` +
+                    `Q ${x},${y} ${x + r},${y} Z`
+
+                  return (
+                    <path
+                      d={d}
+                      fill={fill}
+                      opacity={isActive ? 1 : isCurrent ? 1 : 0.85}
+                      onClick={() => {
+                        const next = activeIndex === index ? null : index
+                        setActiveIndex(next)
+                        setActiveBarPos(next !== null ? { x, width } : null)
+                      }}
+                      style={{ cursor: 'pointer', outline: 'none' }}
+                    />
+                  )
+                }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   )
