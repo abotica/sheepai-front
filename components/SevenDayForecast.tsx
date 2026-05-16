@@ -1,5 +1,6 @@
 import { forecast } from "@/lib/copy"
 import { formatK, formatPassengers } from "@/lib/format"
+import Link from "next/link"
 
 interface DayData {
   day: (typeof forecast.days)[number]
@@ -41,7 +42,7 @@ export default function SevenDayForecast() {
           className="font-mono text-[10px] font-medium text-ink-dim uppercase tabular-nums"
           style={{ letterSpacing: "0.15em" }}
         >
-          uk. {formatPassengers(total)} pax
+          <Link href={"/calendar"}>Pogledaj sve datume</Link>
         </span>
       </div>
 
