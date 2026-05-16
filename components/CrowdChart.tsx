@@ -5,25 +5,11 @@ import { Users } from 'lucide-react'
 import { BarChart, Bar, XAxis, ResponsiveContainer, ReferenceLine } from 'recharts'
 import { crowdLevel } from '@/lib/copy'
 
-const data = [
-  { hour: '6',  load: 200 },
-  { hour: '7',  load: 450 },
-  { hour: '8',  load: 1200 },
-  { hour: '9',  load: 2800 },
-  { hour: '10', load: 4500 },
-  { hour: '11', load: 5200 },
-  { hour: '12', load: 4800 },
-  { hour: '13', load: 3900 },
-  { hour: '14', load: 2400 },
-  { hour: '15', load: 1800 },
-  { hour: '16', load: 3200 },
-  { hour: '17', load: 2100 },
-  { hour: '18', load: 900 },
-  { hour: '19', load: 400 },
-]
+export type HourlyLoad = { hour: string; load: number }
 
-const maxLoad = Math.max(...data.map(d => d.load))
-const CURRENT_HOUR = '11'
+interface CrowdChartProps {
+  data: HourlyLoad[]
+}
 
 
 type ShapeProps = {
@@ -38,10 +24,11 @@ type ShapeProps = {
 
 type BarPos = { x: number; width: number }
 
-export function CrowdChart() {
+export function CrowdChart({ data }: CrowdChartProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [activeBarPos, setActiveBarPos] = useState<BarPos | null>(null)
   const [nowLabel, setNowLabel] = useState('')
+  const [currentHour, setCurrentHour] = useState('')
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -49,10 +36,12 @@ export function CrowdChart() {
       setNowLabel(
         `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
       )
+      setCurrentHour(String(d.getHours()))
     }, 0)
     return () => clearTimeout(id)
   }, [])
 
+  const maxLoad = Math.max(...data.map(d => d.load), 1)
   const activeItem = activeIndex !== null ? data[activeIndex] : null
 
   return (
@@ -110,7 +99,7 @@ export function CrowdChart() {
                   const { x = 0, y = 0, width = 0, height = 0, payload, index = 0 } = props
                   if (!payload || width <= 0 || height <= 0) return <g />
 
-                  const isCurrent = payload.hour === CURRENT_HOUR
+                  const isCurrent = payload.hour === currentHour
                   const isActive = index === activeIndex
                   const fill = isCurrent ? '#D9614B' : '#7E9AA8'
                   const r = 3
