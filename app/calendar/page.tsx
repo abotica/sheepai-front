@@ -40,16 +40,18 @@ export default function CalendarPage() {
   return (
     <main className="flex-1 pb-12">
       <div className="px-5 pt-8 pb-4">
-        <Link href="/" className="inline-flex items-center gap-1.5 mb-4 text-ink-dim">
-          <ArrowLeft size={15} strokeWidth={2} />
-          <span className="font-sans text-[13px] font-medium">Natrag</span>
-        </Link>
-        <h1
-          className="font-sans font-bold text-[28px] text-ink"
-          style={{ letterSpacing: '-0.5px' }}
-        >
-          Raspored {cruisesData.year}
-        </h1>
+        <div className="flex items-baseline justify-between">
+          <h1
+            className="font-sans font-bold text-[28px] text-ink"
+            style={{ letterSpacing: '-0.5px' }}
+          >
+            Raspored {cruisesData.year}
+          </h1>
+          <Link href="/" className="inline-flex items-center gap-1.5 text-ink-dim">
+            <ArrowLeft size={15} strokeWidth={2} />
+            <span className="font-sans text-[13px] font-medium">Natrag</span>
+          </Link>
+        </div>
       </div>
 
       <div className="px-5 space-y-10">

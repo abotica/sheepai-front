@@ -17,18 +17,20 @@ export function MapHeader({ slot }: MapHeaderProps) {
 
   return (
     <div className="flex flex-col gap-2 border-b border-rule bg-paper px-5 py-4">
-      <Link href="/" className="inline-flex items-center gap-1.5 text-ink-dim mb-1">
-        <ArrowLeft size={15} strokeWidth={2} />
-        <span className="font-sans text-[13px] font-medium">Natrag</span>
-      </Link>
-      <div className="flex items-center gap-2">
-        <span className="w-[6px] h-[6px] rounded-full bg-coral shrink-0" />
-        <span
-          className="font-sans text-[11px] font-semibold uppercase text-ink-dim"
-          style={{ letterSpacing: "0.18em" }}
-        >
-          {formatSlotLabel(slot.datetime)}
-        </span>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="w-[6px] h-[6px] rounded-full bg-coral shrink-0" />
+          <span
+            className="font-sans text-[11px] font-semibold uppercase text-ink-dim"
+            style={{ letterSpacing: "0.18em" }}
+          >
+            {formatSlotLabel(slot.datetime)}
+          </span>
+        </div>
+        <Link href="/" className="inline-flex items-center gap-1.5 text-ink-dim">
+          <ArrowLeft size={15} strokeWidth={2} />
+          <span className="font-sans text-[13px] font-medium">Natrag</span>
+        </Link>
       </div>
 
       <div className="flex items-end gap-3 sm:gap-4">
