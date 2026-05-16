@@ -14,14 +14,14 @@ export const home = {
 
 export const personas = {
   business: {
-    title: "Radim u Splitu",
-    subtitle: "Kad mogu očekivati više gostiju?",
-    href: "/business",
+    title: "Želim gužvu",
+    subtitle: "Trbuhom za kruhom!",
+    href: "/zelim-guzvu",
   },
   local: {
-    title: "Živim u Splitu",
-    subtitle: "Kad grad neće biti pretrpan?",
-    href: "/local",
+    title: "Bježim od gužve",
+    subtitle: "Spasi me od furešta!",
+    href: "/bjezim-od-guzve",
   },
 }
 
@@ -74,6 +74,87 @@ export function crowdLevel(load: number): string {
   if (load < 5000) return "Jaka gužva"
   return "Najveća gužva"
 }
+
+/**
+ * Shared persona vocabulary. Each zone gets a short verb-led advice line for
+ * both lenses — "want crowds" (sell to them) vs "escape crowds" (avoid them).
+ * Keep it punchy: 4–7 words. Croatian first.
+ */
+export const persona = {
+  crowds: {
+    eyebrow: "ŽELIM GUŽVU",
+    chipsAll: "Sve zone",
+    sectionToday: "Najbolji sati danas",
+    sectionWeek: "Idućih 7 dana",
+    weekRankLabel: "Najprometniji dani",
+    emptyToday: "Danas nema većih gužvi.",
+    emptyZone: "Zona je mirna cijeli dan.",
+  },
+  calm: {
+    eyebrow: "BJEŽIM OD GUŽVE",
+    chipsAll: "Sve zone",
+    sectionToday: "Kad je mirno",
+    sectionWeek: "Idućih 7 dana",
+    weekRankLabel: "Najmirniji dani",
+    sectionDanger: "Pazi se",
+    emptyToday: "Nema dužeg mirnog prozora — probaj kasnije.",
+    emptyZone: "Zona ostaje u gužvi cijeli dan.",
+    emptyDanger: "Danas nema crvenih zona.",
+  },
+} as const;
+
+/**
+ * Per-zone advice line shown at the bottom of a single-zone WindowCard.
+ * One natural Croatian sentence per (persona, zone). Keep it short enough to
+ * fit on one row on iPhone 14 (≈ 38 chars).
+ */
+export const zoneAdvice = {
+  crowds: {
+    port: "Iskrcaj je u tijeku — taksi i tuk-tuk imaju pune ruke.",
+    old_town: "Stari grad je krcat — vrh dana za restorane i kafiće.",
+    west_coast: "Riva je puna gostiju — vrijeme za kavu i suvenir.",
+    beaches: "Plaže su pune — bar i ležaljke ne staju.",
+    malls: "Kruzeraši bježe od kiše u Mall — udarni sat prodaje.",
+  },
+  calm: {
+    port: "Trajektna luka je mirna — slobodno parkiraj.",
+    old_town: "Stari grad bez navale — vrijeme za kavu na Pjaci.",
+    west_coast: "Riva diše — idealno za šetnju ili bicikliranje.",
+    beaches: "Bačvice su za domaće — kupanje bez gužve.",
+    malls: "Mall je slobodan — kupuj bez čekanja u redu.",
+  },
+} as const;
+
+/**
+ * Advice when multiple zones share the exact same window (start, end, level)
+ * and we collapse them into a single card. `cityWide` is used when every
+ * tracked zone matches; `partial` when only some do.
+ */
+export const mergedAdvice = {
+  crowds: {
+    cityWide: "Cijeli grad je u špici — gdje god radiš, ima posla.",
+    partial: "Više zona istovremeno krcato — biti će puno posla.",
+  },
+  calm: {
+    cityWide: "Cijeli grad odahnuo — biti će malo posla.",
+    partial: "Više zona je mirno istovremeno — nema navale.",
+  },
+} as const;
+
+/** Eyebrow labels for merged-card variants. */
+export const mergedLabels = {
+  cityWide: "Cijeli grad",
+} as const;
+
+export const dayName = {
+  PON: "Ponedjeljak",
+  UTO: "Utorak",
+  SRI: "Srijeda",
+  ČET: "Četvrtak",
+  PET: "Petak",
+  SUB: "Subota",
+  NED: "Nedjelja",
+} as const;
 
 export const map = {
   title: "Karta gužve",
