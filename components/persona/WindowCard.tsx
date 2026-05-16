@@ -1,9 +1,11 @@
 import type { Zone } from "@/lib/forecast";
 import { levelColor, weatherDescriptor } from "@/lib/forecast";
 import type { DisplayWindow } from "@/lib/persona";
-import { formatWindowDuration } from "@/lib/persona";
+import { formatWindowDuration, pluralizeHr } from "@/lib/persona";
 import { formatPassengers } from "@/lib/format";
 import { mergedLabels } from "@/lib/copy";
+
+const ZONE_FORMS = { one: "zona", few: "zone", many: "zona" } as const;
 
 export type WindowCardTone = "crowds" | "calm" | "danger";
 
@@ -88,7 +90,7 @@ export function WindowCard({
           className="shrink-0 font-mono text-[11px] font-semibold tabular-nums text-ink-dim"
           style={{ letterSpacing: "0.05em" }}
         >
-          {window.startTime}–{window.endTime}
+          {formatTimeRange(window.startTime, window.endTime)}
         </span>
       </div>
 
@@ -151,9 +153,9 @@ export function WindowCard({
 /**
  * For merged windows we need a label that fits a single eyebrow row even when
  * Croatian zone names get long ("Trajektna luka i lučko područje"):
- *   - 1 zone           → "Stari grad"
+ *   - 1 zone             → "Stari grad"
  *   - all forecast zones → "Cijeli grad"
- *   - 2–N partial      → "N zona" (count-led, names live on the map)
+ *   - 2–N partial        → "2 zone" / "5 zona" (Croatian paucal vs. plural)
  */
 function buildEyebrow(
   window: DisplayWindow,
@@ -166,7 +168,21 @@ function buildEyebrow(
   if (window.zoneIds.length === totalZoneCount) {
     return mergedLabels.cityWide;
   }
-  return `${window.zoneIds.length} zona`;
+  const n = window.zoneIds.length;
+  return `${n} ${pluralizeHr(n, ZONE_FORMS)}`;
+}
+
+/**
+ * Forecast slots are half-hour buckets indexed off midnight, so a window
+ * ending at end-of-day comes back as "00:00" (the next midnight). Rendering
+ * "00:00–00:00" looks like a glitch. Two conventions:
+ *   - end "00:00" → "24:00" (standard transit shorthand for end-of-day)
+ *   - start "00:00" + end "24:00" → "cijeli dan" (the whole-day case)
+ */
+function formatTimeRange(startTime: string, endTime: string): string {
+  const end = endTime === "00:00" ? "24:00" : endTime;
+  if (startTime === "00:00" && end === "24:00") return "cijeli dan";
+  return `${startTime}–${end}`;
 }
 
 function durationHero(min: number): string {

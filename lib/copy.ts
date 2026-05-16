@@ -85,22 +85,33 @@ export const persona = {
     eyebrow: "ŽELIM GUŽVU",
     chipsAll: "Sve zone",
     sectionToday: "Najbolji sati danas",
+    sectionTomorrow: "Najbolji sati sutra",
     sectionWeek: "Idućih 7 dana",
     weekRankLabel: "Najprometniji dani",
     emptyToday: "Danas nema većih gužvi.",
+    emptyTomorrow: "Sutra nema većih gužvi.",
     emptyZone: "Zona je mirna cijeli dan.",
   },
   calm: {
     eyebrow: "BJEŽIM OD GUŽVE",
     chipsAll: "Sve zone",
     sectionToday: "Kad je mirno",
+    sectionTomorrow: "Kad će biti mirno",
     sectionWeek: "Idućih 7 dana",
     weekRankLabel: "Najmirniji dani",
     sectionDanger: "Pazi se",
     emptyToday: "Nema dužeg mirnog prozora — probaj kasnije.",
+    emptyTomorrow: "Sutra nema dužeg mirnog prozora.",
     emptyZone: "Zona ostaje u gužvi cijeli dan.",
     emptyDanger: "Danas nema crvenih zona.",
+    emptyDangerTomorrow: "Sutra nema crvenih zona.",
   },
+} as const;
+
+/** Day-toggle labels shown in the Danas/Sutra segmented control. */
+export const dayLabel = {
+  today: "Danas",
+  tomorrow: "Sutra",
 } as const;
 
 /**
@@ -132,18 +143,51 @@ export const zoneAdvice = {
  */
 export const mergedAdvice = {
   crowds: {
-    cityWide: "Cijeli grad je u špici — gdje god radiš, ima posla.",
-    partial: "Više zona istovremeno krcato — biti će puno posla.",
+    cityWide: "Cijeli grad je u špici — gdje god radiš, bit će posla.",
+    partial: "Više zona istovremeno krcato — bit će puno posla.",
   },
   calm: {
-    cityWide: "Cijeli grad odahnuo — biti će malo posla.",
-    partial: "Više zona je mirno istovremeno — nema navale.",
+    cityWide: "Cijeli grad odahnuo — idi gdje god te volja.",
+    partial: "Više zona je mirno istovremeno — biraj gdje ti paše.",
   },
 } as const;
 
 /** Eyebrow labels for merged-card variants. */
 export const mergedLabels = {
   cityWide: "Cijeli grad",
+} as const;
+
+/**
+ * Persona-aware status line shown under the hero. Reflects the current state
+ * of "today" — are ships still here, did they all leave, was there a peak?
+ *
+ * Inputs are pre-formatted "HH:MM" strings (or null when unknown); the helpers
+ * here just stitch them into a Croatian sentence. Keeps all localized prose
+ * in this file rather than the React tree.
+ */
+export const personaStatus = {
+  crowds: {
+    /** Ships are still in port (or arriving soon today). */
+    active: "Stigli su ljudi.",
+    /** All today's ships have departed; next arrival is tomorrow. */
+    departed: (lastDep: string, nextArrTomorrow: string | null) =>
+      nextArrTomorrow
+        ? `Kupci su otišli u ${lastDep} · sutra opet od ${nextArrTomorrow}.`
+        : `Kupci su otišli u ${lastDep} · sutra ništa.`,
+    /** Future-day view: ships will arrive at `firstArr`. */
+    upcoming: (firstArr: string) => `Ljudi stižu u ${firstArr}.`,
+  },
+  calm: {
+    /** Some zones still hit orange/red later today (or any time tomorrow). */
+    risk: (dangerLabel: string) => `${dangerLabel} · planiraj oprezno`,
+    /** All today's ships have departed; rest of the day is yours. */
+    departed: (lastDep: string, nextArrTomorrow: string | null) =>
+      nextArrTomorrow
+        ? `Brodovi otputovali u ${lastDep} · sutra novi val od ${nextArrTomorrow}.`
+        : `Brodovi otputovali u ${lastDep} · grad je tvoj.`,
+    /** Future-day view, no red zones expected. */
+    quietDay: "Mirne zone cijeli dan — slobodno planiraj.",
+  },
 } as const;
 
 export const dayName = {

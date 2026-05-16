@@ -14,6 +14,13 @@ interface WeekOutlookProps {
   cruises: CruisesFile;
   zones: Zone[];
   variant: PersonaVariant;
+  /**
+   * Index (0–6) of the day currently shown in the hero / sections above.
+   * The bar grid highlights ONLY this day — no winner glow — so the visual
+   * answers "which day am I looking at?". The ranking list below already
+   * communicates which days are the most/least busy.
+   */
+  selectedDayOffset?: number;
 }
 
 const DAY_SHORT_HR = ["NED", "PON", "UTO", "SRI", "ČET", "PET", "SUB"] as const;
@@ -58,7 +65,6 @@ interface DayRow {
   score: number;
   /** Display number (e.g. passengers ashore total, or calm hours). */
   display: string;
-  isToday: boolean;
 }
 
 export function WeekOutlook({
@@ -66,12 +72,12 @@ export function WeekOutlook({
   cruises,
   zones,
   variant,
+  selectedDayOffset = 0,
 }: WeekOutlookProps) {
   const v = VARIANT[variant];
   const days = getHorizonDays(forecast, 7);
   if (days.length === 0) return null;
 
-  const todayMs = days[0]!.date.getTime();
   const zoneIds = zones.map((z) => z.id);
 
   const rows: DayRow[] = days.map((bounds) => {
@@ -83,7 +89,6 @@ export function WeekOutlook({
         dayLabel: DAY_SHORT_HR[bounds.date.getDay()] as (typeof DAY_SHORT_HR)[number],
         score: total,
         display: total > 0 ? formatK(total) : "–",
-        isToday: bounds.date.getTime() === todayMs,
       };
     }
     // calm: average green minutes across zones, expressed in hours per zone.
@@ -96,14 +101,17 @@ export function WeekOutlook({
       dayLabel: DAY_SHORT_HR[bounds.date.getDay()] as (typeof DAY_SHORT_HR)[number],
       score: calmMin,
       display: calmHPerZone > 0 ? `${calmHPerZone}h` : "–",
-      isToday: bounds.date.getTime() === todayMs,
     };
   });
 
   const maxScore = Math.max(1, ...rows.map((r) => r.score));
   const sortedDesc = [...rows].sort((a, b) => b.score - a.score);
-  const winnerIdx = sortedDesc[0] && sortedDesc[0].score > 0 ? rows.indexOf(sortedDesc[0]) : -1;
   const top3 = sortedDesc.slice(0, 3).filter((r) => r.score > 0);
+  /**
+   * Clamp the caller-supplied offset to the horizon so an out-of-range value
+   * (e.g. forecast shorter than expected) still produces a valid highlight.
+   */
+  const selectedIdx = Math.min(Math.max(0, selectedDayOffset), rows.length - 1);
 
   return (
     <section className="px-5 mt-8">
@@ -124,18 +132,18 @@ export function WeekOutlook({
 
       <div className="flex gap-1.5">
         {rows.map((row, idx) => {
-          const highlight = idx === winnerIdx || row.isToday;
+          const selected = idx === selectedIdx;
           const h = Math.max(3, Math.round((row.score / maxScore) * BAR_TRACK));
           return (
             <div
               key={row.bounds.date.toISOString()}
               className="flex-1 flex flex-col items-center rounded-2xl border py-3 gap-2"
               style={
-                highlight
+                selected
                   ? {
-                      backgroundColor: row.isToday ? "#FFFFFF" : v.bestBg,
+                      backgroundColor: "#FFFFFF",
                       borderColor: v.bestBorder,
-                      boxShadow: row.isToday ? v.bestShadow : "none",
+                      boxShadow: v.bestShadow,
                     }
                   : {
                       backgroundColor: "#FBF8F2",
@@ -147,7 +155,7 @@ export function WeekOutlook({
                 className="font-sans text-[9px] font-semibold uppercase"
                 style={{
                   letterSpacing: "0.12em",
-                  color: highlight ? v.bestColor : "#5A6B78",
+                  color: selected ? v.bestColor : "#5A6B78",
                 }}
               >
                 {row.dayLabel}

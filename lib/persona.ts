@@ -11,11 +11,16 @@
  */
 
 import type {
+  CruiseShip,
   CruisesFile,
   ForecastFile,
   ForecastSlot,
   LoadLevel,
   WeatherBucket,
+} from "@/lib/forecast";
+import {
+  SCHEDULE_DEFAULT_ARRIVAL,
+  SCHEDULE_DEFAULT_DEPARTURE,
 } from "@/lib/forecast";
 
 const SLOT_MINUTES = 30;
@@ -594,6 +599,125 @@ export function topDangerDisplayWindows(
     (a, b) => b.peakLoad - a.peakLoad,
     opts,
   );
+}
+
+// ---------------------------------------------------------------------------
+// Real-clock state — "is today still happening?"
+// ---------------------------------------------------------------------------
+
+/** Slot index whose 30-min span contains `now`. Clamped to the horizon. */
+export function currentSlotIndex(
+  forecast: ForecastFile,
+  now: Date = new Date(),
+): number {
+  const nowMs = now.getTime();
+  for (let i = 0; i < forecast.time_slots.length; i++) {
+    const slotMs = new Date(forecast.time_slots[i]!.datetime).getTime();
+    if (slotMs > nowMs) return Math.max(0, i - 1);
+  }
+  return Math.max(0, forecast.time_slots.length - 1);
+}
+
+/**
+ * Time-aware version of {@link dayDangerZonesCount}. Only counts zones that
+ * hit orange/red AT OR AFTER `cutoff`. Use this for the hero warning line so
+ * we don't say "5 zones red" three hours after the city already cooled down.
+ */
+export function dayUpcomingDangerZonesCount(
+  forecast: ForecastFile,
+  zoneIds: string[],
+  range: DayBounds,
+  cutoff: Date = new Date(),
+): number {
+  const cutoffMs = cutoff.getTime();
+  let n = 0;
+  for (const id of zoneIds) {
+    let hit = false;
+    for (let i = range.startIdx; i <= range.endIdx && !hit; i++) {
+      const slot = forecast.time_slots[i]!;
+      const slotEndMs =
+        new Date(slot.datetime).getTime() + SLOT_MINUTES * 60_000;
+      if (slotEndMs <= cutoffMs) continue;
+      const z = slot.zones[id];
+      if (z && LEVEL_RANK[z.level] >= LEVEL_RANK.orange) hit = true;
+    }
+    if (hit) n += 1;
+  }
+  return n;
+}
+
+// ---------------------------------------------------------------------------
+// Ship schedule helpers (for "have they all left yet?" UX)
+// ---------------------------------------------------------------------------
+
+function isoDateOfRange(range: DayBounds): string {
+  const y = range.date.getFullYear();
+  const m = String(range.date.getMonth() + 1).padStart(2, "0");
+  const dd = String(range.date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${dd}`;
+}
+
+function shipsOnDay(cruises: CruisesFile, range: DayBounds): CruiseShip[] {
+  const dateStr = isoDateOfRange(range);
+  return cruises.ships.filter((s) => s.date === dateStr);
+}
+
+/** Combines `YYYY-MM-DD` + `HH:MM` into an ISO instant pinned to Split (CEST). */
+function combineDateAndTime(date: string, hhmm: string): number {
+  return new Date(`${date}T${hhmm}:00+02:00`).getTime();
+}
+
+/**
+ * `true` when every ship scheduled for `range`'s day has already departed.
+ * Falls back to `SCHEDULE_DEFAULT_DEPARTURE` (17:00) for ships missing a
+ * concrete time — same fallback the forecast pipeline uses.
+ *
+ * Returns `false` when there are no ships at all that day (use `passengers
+ * ArrivingOnDay === 0` for the "empty day" branch).
+ */
+export function allShipsDepartedForDay(
+  cruises: CruisesFile,
+  range: DayBounds,
+  now: Date = new Date(),
+): boolean {
+  const ships = shipsOnDay(cruises, range);
+  if (ships.length === 0) return false;
+  const nowMs = now.getTime();
+  for (const ship of ships) {
+    const dep = ship.departure_time ?? SCHEDULE_DEFAULT_DEPARTURE;
+    if (combineDateAndTime(ship.date, dep) > nowMs) return false;
+  }
+  return true;
+}
+
+/** Latest `HH:MM` departure across `range`'s ships, or null when none. */
+export function lastDepartureForDay(
+  cruises: CruisesFile,
+  range: DayBounds,
+): string | null {
+  const ships = shipsOnDay(cruises, range);
+  if (ships.length === 0) return null;
+  let latest = "";
+  for (const ship of ships) {
+    const dep = ship.departure_time ?? SCHEDULE_DEFAULT_DEPARTURE;
+    if (dep > latest) latest = dep;
+  }
+  return latest || null;
+}
+
+/** Earliest `HH:MM` arrival across `range`'s ships, or null when none. */
+export function firstArrivalForDay(
+  cruises: CruisesFile,
+  range: DayBounds,
+): string | null {
+  const ships = shipsOnDay(cruises, range);
+  if (ships.length === 0) return null;
+  let earliest = "99:99";
+  for (const ship of ships) {
+    const arr = ship.arrival_time ?? SCHEDULE_DEFAULT_ARRIVAL;
+    if (arr < earliest) earliest = arr;
+  }
+  return earliest === "99:99" ? null : earliest;
 }
 
 // ---------------------------------------------------------------------------
