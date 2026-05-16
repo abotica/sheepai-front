@@ -64,8 +64,33 @@ const ZONE_FORMS = { one: "zona", few: "zone", many: "zona" } as const;
 const SHIP_FORMS = { one: "kruzer", few: "kruzera", many: "kruzera" } as const;
 
 /**
+ * Cutoff (minutes-since-midnight) for "afternoon". Used to flip port advice
+ * from `Iskrcaj` (morning, passengers fanning out) to `Ukrcaj` (heading back
+ * to the ship). 14:00 keeps the mid-day arrival period as morning while
+ * cleanly catching late-afternoon embarkation runs (15:00–17:00).
+ */
+const AFTERNOON_CUTOFF_MIN = 14 * 60;
+
+function parseHmToMin(hhmm: string): number {
+  const [h, m] = hhmm.split(":").map(Number);
+  return (h ?? 0) * 60 + (m ?? 0);
+}
+
+/** True when the window's midpoint sits at or after 14:00 wall-clock time. */
+function isAfternoonWindow(window: DisplayWindow): boolean {
+  const start = parseHmToMin(window.startTime);
+  // "00:00" end means "next-day midnight" — treat as 24:00 for math.
+  const end = window.endTime === "00:00" ? 24 * 60 : parseHmToMin(window.endTime);
+  return (start + end) / 2 >= AFTERNOON_CUTOFF_MIN;
+}
+
+/**
  * Pick the right advice string for a (potentially merged) DisplayWindow.
- * Single-zone → per-zone bank; multi-zone → merged bank (city-wide vs partial).
+ *
+ *   single zone → per-zone bank in `zoneAdvice`
+ *     - entries can be `string` OR `{ morning, afternoon }` (port only,
+ *       to flip Iskrcaj/Ukrcaj based on time of day)
+ *   multi-zone  → merged bank (city-wide vs partial)
  */
 function adviceFor(
   variant: PersonaVariant,
@@ -75,7 +100,9 @@ function adviceFor(
   if (window.zoneIds.length === 1) {
     const id = window.zoneIds[0]!;
     if (!(ZONE_ID_KEYS as readonly string[]).includes(id)) return null;
-    return zoneAdvice[variant][id as AdviceZoneId];
+    const entry = zoneAdvice[variant][id as AdviceZoneId];
+    if (typeof entry === "string") return entry;
+    return isAfternoonWindow(window) ? entry.afternoon : entry.morning;
   }
   const bank = mergedAdvice[variant];
   return window.zoneIds.length === totalZoneCount ? bank.cityWide : bank.partial;

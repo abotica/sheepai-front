@@ -3,7 +3,7 @@ import { levelColor, weatherDescriptor } from "@/lib/forecast";
 import type { DisplayWindow } from "@/lib/persona";
 import { formatWindowDuration, pluralizeHr } from "@/lib/persona";
 import { formatPassengers } from "@/lib/format";
-import { mergedLabels } from "@/lib/copy";
+import { mergedLabels, zoneShortName } from "@/lib/copy";
 
 const ZONE_FORMS = { one: "zona", few: "zone", many: "zona" } as const;
 
@@ -155,21 +155,29 @@ export function WindowCard({
  * Croatian zone names get long ("Trajektna luka i lučko područje"):
  *   - 1 zone             → "Stari grad"
  *   - all forecast zones → "Cijeli grad"
- *   - 2–N partial        → "2 zone" / "5 zona" (Croatian paucal vs. plural)
+ *   - 2–3 partial        → "Stari grad · Bačvice" (named so the user knows
+ *                          WHICH zones got merged; uses short names from
+ *                          `zoneShortName` to keep the row scannable)
+ *   - 4+ partial         → "4 zone" / "5 zona" (too many names to fit)
  */
 function buildEyebrow(
   window: DisplayWindow,
   zonesById: Map<string, Zone>,
   totalZoneCount: number,
 ): string {
-  if (window.zoneIds.length === 1) {
+  const count = window.zoneIds.length;
+  if (count === 1) {
     return zonesById.get(window.zoneIds[0]!)?.name_hr ?? window.zoneIds[0]!;
   }
-  if (window.zoneIds.length === totalZoneCount) {
+  if (count === totalZoneCount) {
     return mergedLabels.cityWide;
   }
-  const n = window.zoneIds.length;
-  return `${n} ${pluralizeHr(n, ZONE_FORMS)}`;
+  if (count <= 3) {
+    return window.zoneIds
+      .map((id) => zoneShortName[id] ?? zonesById.get(id)?.name_hr ?? id)
+      .join(" · ");
+  }
+  return `${count} ${pluralizeHr(count, ZONE_FORMS)}`;
 }
 
 /**

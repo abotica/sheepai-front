@@ -118,10 +118,17 @@ export const dayLabel = {
  * Per-zone advice line shown at the bottom of a single-zone WindowCard.
  * One natural Croatian sentence per (persona, zone). Keep it short enough to
  * fit on one row on iPhone 14 (≈ 38 chars).
+ *
+ * The port zone is special: morning is `Iskrcaj` (passengers leaving the
+ * ship, fanning out into town) while afternoon is `Ukrcaj` (heading back to
+ * embark). The advice resolver picks the variant based on window midpoint.
  */
 export const zoneAdvice = {
   crowds: {
-    port: "Iskrcaj je u tijeku — taksi i tuk-tuk imaju pune ruke.",
+    port: {
+      morning: "Iskrcaj je u tijeku — taksi i tuk-tuk imaju pune ruke.",
+      afternoon: "Ukrcaj je u tijeku — taksi i tuk-tuk voze do broda.",
+    },
     old_town: "Stari grad je krcat — vrh dana za restorane i kafiće.",
     west_coast: "Riva je puna gostiju — vrijeme za kavu i suvenir.",
     beaches: "Plaže su pune — bar i ležaljke ne staju.",
@@ -135,6 +142,21 @@ export const zoneAdvice = {
     malls: "Mall je slobodan — kupuj bez čekanja u redu.",
   },
 } as const;
+
+/**
+ * Short labels used in merged WindowCard eyebrows. Full zone names from
+ * `zones.json` are too long for the eyebrow row when 2–3 zones get listed
+ * side by side ("Trajektna luka i lučko područje" alone is 33 chars).
+ *
+ * Keys mirror zone IDs in `data/zones.json`.
+ */
+export const zoneShortName: Record<string, string> = {
+  port: "Trajektna luka",
+  old_town: "Stari grad",
+  west_coast: "Zapadna obala",
+  beaches: "Bačvice",
+  malls: "Mall",
+};
 
 /**
  * Advice when multiple zones share the exact same window (start, end, level)
