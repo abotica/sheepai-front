@@ -1,12 +1,12 @@
 import { home } from "@/lib/copy";
-import { formatPassengers } from "@/lib/format";
+import { AnimatedCount } from "@/components/AnimatedCount";
 
 interface HomeHeaderProps {
   city: string;
   passengerCount: number;
   shipCount: number;
-  timeStart: string;
-  timeEnd: string;
+  timeStart: string | null;
+  timeEnd: string | null;
 }
 
 export function HomeHeader({
@@ -33,7 +33,7 @@ export function HomeHeader({
         style={{ letterSpacing: "-1.5px" }}
       >
         <span className="text-[60px] font-bold text-ink tabular-nums">
-          {formatPassengers(passengerCount)}
+          <AnimatedCount target={passengerCount} />
         </span>
         <span className="text-[60px] font-normal italic text-ink-dim">
           {" "}{home.passengerSuffix}
@@ -48,9 +48,11 @@ export function HomeHeader({
           {shipCount} kruzera
         </span>
         <span className="text-rule text-[16px] leading-none">·</span>
-        <span className="font-mono text-[12px] text-ink-dim">
-          {timeStart} — {timeEnd}
-        </span>
+        {timeStart && timeEnd && (
+          <span className="font-mono text-[12px] text-ink-dim">
+            {timeStart} — {timeEnd}
+          </span>
+        )}
       </div>
     </header>
   );

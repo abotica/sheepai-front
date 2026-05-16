@@ -1,33 +1,23 @@
 import { forecast } from "@/lib/copy"
-import { formatK, formatPassengers } from "@/lib/format"
+import { formatK } from "@/lib/format"
 import Link from "next/link"
 
-interface DayData {
+export interface DayData {
+  date: string
   day: (typeof forecast.days)[number]
   load: number | null
   isToday?: boolean
 }
 
-const data: DayData[] = [
-  { day: "PON", load: 1800 },
-  { day: "UTO", load: 3900, isToday: true },
-  { day: "SRI", load: 2200 },
-  { day: "ČET", load: null },
-  { day: "PET", load: 6000 },
-  { day: "SUB", load: 4100 },
-  { day: "NED", load: 1500 },
-]
-
 const BAR_TRACK = 48
-const maxLoad = Math.max(...data.map(d => d.load ?? 0))
 
-function barHeight(load: number | null): number {
-  if (!load) return 2
-  return Math.max(3, Math.round((load / maxLoad) * BAR_TRACK))
-}
+export default function SevenDayForecast({ data }: { data: DayData[] }) {
+  const maxLoad = Math.max(...data.map(d => d.load ?? 0), 1)
 
-export default function SevenDayForecast() {
-  const total = data.reduce((sum, d) => sum + (d.load ?? 0), 0)
+  function barHeight(load: number | null): number {
+    if (!load) return 2
+    return Math.max(3, Math.round((load / maxLoad) * BAR_TRACK))
+  }
 
   return (
     <div className="px-5 mt-8">
@@ -42,14 +32,14 @@ export default function SevenDayForecast() {
           className="font-mono text-[10px] font-medium text-ink-dim uppercase tabular-nums"
           style={{ letterSpacing: "0.15em" }}
         >
-          <Link href={"/calendar"}>Pogledaj sve datume</Link>
+          <Link href={"/calendar"} className="underline">Pogledaj sve datume</Link>
         </span>
       </div>
 
       <div className="flex gap-1.5">
-        {data.map(({ day, load, isToday }) => (
+        {data.map(({ date, day, load, isToday }) => (
           <div
-            key={day}
+            key={date}
             className="flex-1 flex flex-col items-center rounded-2xl border py-3 gap-2"
             style={
               isToday
