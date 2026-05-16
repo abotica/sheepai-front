@@ -9,7 +9,9 @@ import cruisesData from "@/data/cruises.json"
 import forecastData from "@/data/forecast.json"
 import type { HourlyLoad } from "@/components/CrowdChart"
 import type { DayData } from "@/components/SevenDayForecast"
-import { forecast as forecastCopy } from "@/lib/copy"
+import zonesData from "@/data/zones.json"
+import type { ZonesFile, ForecastSlot } from "@/lib/forecast"
+import MapPreview from "@/components/MapPreview"
 
 const today = new Date().toISOString().slice(0, 10)
 const todayShips = cruisesData.ships.filter(s => s.date === today)
@@ -48,10 +50,21 @@ const weekData: DayData[] = [...dayPeakMap.entries()]
     return { date, day, load: load > 0 ? load : null, isToday: date === today }
   })
 
+// Find the closest forecast slot to now
+const nowIso = new Date().toISOString()
+const currentSlot = forecastData.time_slots.reduce((best, slot) =>
+  Math.abs(new Date(slot.datetime).getTime() - new Date(nowIso).getTime()) <
+  Math.abs(new Date(best.datetime).getTime() - new Date(nowIso).getTime())
+    ? slot
+    : best
+)
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 bg-surface font-sans">
       <main className="flex flex-col flex-1 w-full">
+        
+        <MapPreview zones={zonesData as ZonesFile} slot={currentSlot as ForecastSlot} />
         <HomeHeader
           city="Split"
           passengerCount={passengerCount}
@@ -59,7 +72,7 @@ export default function Home() {
           timeStart={timeStart}
           timeEnd={timeEnd}
         />
-        <CrowdChart data={crowdData} />
+        {/* <CrowdChart data={crowdData} /> */}
         <div className="grid grid-cols-2 gap-3 px-5 mt-6">
           <ClickCard
             title={personas.business.title}
