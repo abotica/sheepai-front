@@ -1,8 +1,6 @@
 # KadĆeKruzer?
 
-<p align="center">
-  <img src="./assets/main_page.png" alt="KadĆeKruzer? — homepage" width="380" />
-</p>
+![KadĆeKruzer? — homepage](./assets/main_page.png)
 
 > Split drowns under cruise crowds. KadĆeKruzer? forecasts per-zone surges in 30-min slots, then flips the lens: locals find calm windows to run errands; tuk-tuks and shops spot peak hours to cash in. Same data, opposite playbooks.
 
@@ -47,7 +45,7 @@ Both persona pages share the same hero number, day toggle (Danas / Sutra), 7-day
  ┌──────────────────────────────────────────┐
  │  Static Next.js 16 frontend              │
  │   • persona engine (lib/persona.ts)      │
- │   • Leaflet map                           │
+ │   • Leaflet map                          │
  │   • Resend newsletter                    │
  └──────────────────────────────────────────┘
 ```
