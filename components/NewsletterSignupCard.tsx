@@ -2,7 +2,8 @@
 
 import { useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
-import { ArrowRight, Mail, Ship, X } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Mail, X } from "lucide-react";
 import { newsletter } from "@/lib/copy";
 
 export default function NewsletterSignupCard() {
@@ -10,26 +11,24 @@ export default function NewsletterSignupCard() {
 
   return (
     <>
-      <div className="mx-5 mt-6 rounded-3xl bg-ink overflow-hidden shadow-sm">
+      <div className="mx-5 mt-6 rounded-3xl bg-white border border-rule overflow-hidden shadow-sm">
         <div className="p-5 flex gap-4">
-          <div
-            className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
-            style={{
-              backgroundColor: "rgba(244,239,230,0.08)",
-              border: "1px solid rgba(244,239,230,0.15)",
-            }}
-          >
-            <Ship size={24} color="#D88A0E" strokeWidth={1.5} aria-hidden />
+          <div className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center bg-cream border border-rule">
+            <Image
+              src="/kruzer_samo_logo.svg"
+              alt=""
+              width={40}
+              height={25}
+              className="w-10 h-auto object-contain"
+              aria-hidden
+            />
           </div>
 
           <div className="flex flex-col gap-1 min-w-0">
-            <h3 className="font-display font-semibold text-[18px] text-cream leading-snug">
+            <h3 className="font-display font-semibold text-[18px] text-ink leading-snug">
               {newsletter.cardTitle}
             </h3>
-            <p
-              className="font-sans text-[12px] leading-relaxed"
-              style={{ color: "#A8B4BD" }}
-            >
+            <p className="font-sans text-[12px] leading-relaxed text-ink-dim">
               {newsletter.cardBody}
             </p>
           </div>
@@ -38,12 +37,11 @@ export default function NewsletterSignupCard() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="w-full flex items-center justify-between px-5 py-3.5 min-h-[48px] text-left transition-opacity duration-150 hover:opacity-95"
-          style={{ borderTop: "1px solid rgba(244,239,230,0.10)" }}
+          className="w-full flex items-center justify-between px-5 py-3.5 min-h-[48px] text-left border-t border-rule transition-opacity duration-150 hover:opacity-95"
         >
           <div className="flex items-center gap-2">
             <Mail size={15} color="#D88A0E" strokeWidth={1.75} aria-hidden />
-            <span className="font-sans text-[13px] font-semibold text-cream">
+            <span className="font-sans text-[13px] font-semibold text-ink">
               {newsletter.cardCta}
             </span>
           </div>
