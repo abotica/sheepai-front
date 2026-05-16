@@ -8,7 +8,7 @@ import {
   fetchCruises,
   fetchForecast,
   fetchZones,
-  findDefaultDisplaySlot,
+  findClosestSlotIndex,
 } from "@/lib/forecast";
 import { MapHeader } from "@/components/map/MapHeader";
 import {
@@ -69,7 +69,7 @@ export default function MapPage() {
     if (!forecast) return;
     if (lastForecastGenAt.current !== forecast.generated_at) {
       lastForecastGenAt.current = forecast.generated_at;
-      setSlotIndex(findDefaultDisplaySlot(forecast, maxTimelineIndex));
+      setSlotIndex(Math.min(findClosestSlotIndex(forecast), maxTimelineIndex));
       return;
     }
     setSlotIndex((i) => Math.min(i, maxTimelineIndex));
