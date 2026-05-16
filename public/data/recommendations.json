@@ -1,0 +1,43 @@
+{
+  "$schema_version": 1,
+  "business": {
+    "imminent_ship": {
+      "hr": "Budi u luci do {time}. Dolazi {ship_name} sa {passengers} putnika.",
+      "en": "Be at the port by {time}. {ship_name} arriving with {passengers} passengers."
+    },
+    "multi_ship_day": {
+      "hr": "Danas dolazi {ship_count} brodova, ukupno {passengers} putnika. Pripremi smjenu.",
+      "en": "Today {ship_count} ships arrive, totalling {passengers} passengers. Plan your shifts."
+    },
+    "calm_window": {
+      "hr": "Tihi period od {start} do {end}. Dobro vrijeme za pauzu ili pripremu.",
+      "en": "Quiet window {start} to {end}. Good time for a break or prep work."
+    },
+    "no_ships_today": {
+      "hr": "Danas nema kruzera. Razmisli o lokalnim klijentima.",
+      "en": "No cruise ships today. Consider local clients."
+    }
+  },
+  "local": {
+    "zone_red": {
+      "hr": "Izbjegavaj {zone_name} od {start} do {end} — predviđena gužva.",
+      "en": "Avoid {zone_name} from {start} to {end} — heavy crowd expected."
+    },
+    "zone_orange": {
+      "hr": "{zone_name} će biti puna između {start} i {end}.",
+      "en": "{zone_name} will be busy between {start} and {end}."
+    },
+    "zone_safe_window": {
+      "hr": "Najbolje vrijeme za {zone_name}: {start}–{end}.",
+      "en": "Best time to visit {zone_name}: {start}–{end}."
+    },
+    "alternative_zone": {
+      "hr": "{zone_name} je preopterećena. Pokušaj {alt_zone_name} umjesto.",
+      "en": "{zone_name} is overloaded. Try {alt_zone_name} instead."
+    },
+    "all_clear_today": {
+      "hr": "Danas nema većih dolazaka kruzera. Grad je tvoj.",
+      "en": "No major cruise arrivals today. The city is yours."
+    }
+  }
+}

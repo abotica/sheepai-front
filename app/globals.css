@@ -9,11 +9,21 @@
   --color-paper:   #FBF8F2;
   --color-ink:     #0A1F2E;
   --color-ink-dim: #5A6B78;
+  --color-ink-mute:#8A98A3;
   --color-rule:    #E8E0D2;
   --color-amber:   #D88A0E;
   --color-teal:    #2E7E80;
   --color-coral:   #D9614B;
   --color-bar:     #7E9AA8;
+
+  --color-intensity-calm:        #16A34A;
+  --color-intensity-calm-bg:     #ECF7EE;
+  --color-intensity-building:    #D88A0E;
+  --color-intensity-building-bg: #FBF1DC;
+  --color-intensity-heavy:       #C25A18;
+  --color-intensity-heavy-bg:    #FBE6D3;
+  --color-intensity-tsunami:     #B83A2C;
+  --color-intensity-tsunami-bg:  #F8DAD2;
 }
 
 body {
@@ -24,4 +34,64 @@ body {
 svg:focus,
 svg *:focus {
   outline: none;
+}
+
+/* ---------- Leaflet, tuned to the cream/paper palette ---------- */
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+}
+
+.leaflet-control-attribution {
+  font-size: 10px !important;
+  background: rgba(251, 248, 242, 0.85) !important;
+  color: var(--color-ink-dim) !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--color-ink-dim) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 14px !important;
+  background: var(--color-paper) !important;
+  box-shadow:
+    0 1px 2px 0 rgba(10, 31, 46, 0.04),
+    0 0 0 1px var(--color-rule) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+}
+
+.leaflet-popup-tip {
+  background: var(--color-paper) !important;
+  box-shadow: none !important;
+}
+
+.brod-tooltip.leaflet-tooltip {
+  background: rgba(251, 248, 242, 0.96) !important;
+  border: 1px solid var(--color-rule) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px -2px rgba(10, 31, 46, 0.08) !important;
+  padding: 8px 10px !important;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+.brod-tooltip.leaflet-tooltip-top::before {
+  border-top-color: var(--color-rule) !important;
+}
+
+.brod-map-popup.leaflet-popup-content-wrapper {
+  max-width: min(300px, calc(100vw - 2rem)) !important;
 }

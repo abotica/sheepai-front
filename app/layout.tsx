@@ -28,7 +28,7 @@ export default function RootLayout({
       lang="hr"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="h-full flex flex-col bg-cream text-ink">
+      <body className="flex min-h-0 min-h-dvh flex-col bg-cream text-ink">
         <Navbar />
         {children}
       </body>

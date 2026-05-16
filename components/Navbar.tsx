@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
+import { nav } from "@/lib/copy";
 
 export default function Navbar() {
   return (
@@ -19,9 +20,19 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className="flex items-center gap-1">
-          <MapPin size={13} color="#0A1F2E" strokeWidth={2} />
-          <span className="font-sans text-[13px] font-medium text-ink">Split</span>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/map"
+            className="font-sans text-[13px] font-medium text-ink hover:text-coral transition-colors duration-150"
+          >
+            {nav.map}
+          </Link>
+          <div className="flex items-center gap-1">
+            <MapPin size={13} color="#0A1F2E" strokeWidth={2} />
+            <span className="font-sans text-[13px] font-medium text-ink">
+              {nav.city}
+            </span>
+          </div>
         </div>
       </div>
     </nav>
