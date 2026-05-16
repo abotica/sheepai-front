@@ -24,16 +24,14 @@ export default function Home() {
             subtitle={personas.business.subtitle}
             href={personas.business.href}
             icon={Ship}
-            accentColor="#CA8A04"
-            accentBg="#FEFCE8"
+            accentColor="#D88A0E"
           />
           <ClickCard
             title={personas.local.title}
             subtitle={personas.local.subtitle}
             href={personas.local.href}
             icon={House}
-            accentColor="#16A34A"
-            accentBg="#F0FDF4"
+            accentColor="#2E7E80"
           />
         </div>
         <SevenDayForecast />

@@ -17,19 +17,12 @@ const data: DayData[] = [
   { day: "NED", load: 1500 },
 ]
 
-const MAX_BAR_H = 52
+const BAR_TRACK = 48
 const maxLoad = Math.max(...data.map(d => d.load ?? 0))
 
 function barHeight(load: number | null): number {
-  if (!load) return 3
-  return Math.max(4, Math.round((load / maxLoad) * MAX_BAR_H))
-}
-
-function barColor(load: number | null): string {
-  if (!load) return "#A1A1AA"
-  if (load < 2500) return "#CA8A04"
-  if (load < 5000) return "#EA580C"
-  return "#DC2626"
+  if (!load) return 2
+  return Math.max(3, Math.round((load / maxLoad) * BAR_TRACK))
 }
 
 export default function SevenDayForecast() {
@@ -38,10 +31,16 @@ export default function SevenDayForecast() {
   return (
     <div className="px-5 mt-8">
       <div className="flex items-baseline justify-between mb-4">
-        <h2 className="font-display font-semibold text-[18px] text-ink">
+        <h2
+          className="font-display font-semibold text-[22px] text-ink"
+          style={{ letterSpacing: "-0.5px" }}
+        >
           {forecast.heading}
         </h2>
-        <span className="font-mono text-[11px] font-medium text-ink-tertiary tabular-nums uppercase tracking-wide">
+        <span
+          className="font-mono text-[10px] font-medium text-ink-dim uppercase tabular-nums"
+          style={{ letterSpacing: "0.15em" }}
+        >
           uk. {formatPassengers(total)} pax
         </span>
       </div>
@@ -51,30 +50,55 @@ export default function SevenDayForecast() {
           <div
             key={day}
             className="flex-1 flex flex-col items-center rounded-2xl border py-3 gap-2"
-            style={{
-              backgroundColor: "#FAFAFA",
-              borderColor: isToday ? "#CA8A04" : "#E4E4E7",
-              borderWidth: isToday ? 1.5 : 1,
-            }}
+            style={
+              isToday
+                ? {
+                    backgroundColor: "#FFFFFF",
+                    borderColor: "#D88A0E",
+                    boxShadow: "0 6px 18px -10px #D88A0E80",
+                  }
+                : {
+                    backgroundColor: "#FBF8F2",
+                    borderColor: "#E8E0D2",
+                  }
+            }
           >
-            <span className="font-sans text-[10px] font-semibold text-ink-secondary uppercase tracking-wide">
+            <span
+              className="font-sans text-[9px] font-semibold uppercase"
+              style={{
+                letterSpacing: "0.12em",
+                color: isToday ? "#D88A0E" : "#5A6B78",
+              }}
+            >
               {day}
             </span>
 
             <div
               className="flex items-end justify-center"
-              style={{ height: MAX_BAR_H }}
+              style={{ height: BAR_TRACK }}
             >
-              <div
-                className="w-2.5 rounded-t-sm"
-                style={{
-                  height: barHeight(load),
-                  backgroundColor: barColor(load),
-                }}
-              />
+              {load !== null ? (
+                <div
+                  style={{
+                    width: 8,
+                    height: barHeight(load),
+                    backgroundColor: "#D88A0E",
+                    borderRadius: "2px 2px 0 0",
+                  }}
+                />
+              ) : (
+                <div
+                  style={{
+                    width: 8,
+                    height: 2,
+                    backgroundColor: "#E8E0D2",
+                    borderRadius: 1,
+                  }}
+                />
+              )}
             </div>
 
-            <span className="font-mono text-[11px] font-medium text-ink tabular-nums">
+            <span className="font-mono text-[10px] font-semibold text-ink tabular-nums">
               {load !== null ? formatK(load) : "–"}
             </span>
           </div>

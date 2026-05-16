@@ -5,31 +5,20 @@
   --font-display: var(--font-fraunces);
   --font-mono: var(--font-mono);
 
-  --color-brand: #0F4C75;
-
-  --color-ink: #09090B;
-  --color-ink-secondary: #71717A;
-  --color-ink-tertiary: #A1A1AA;
-
-  --color-surface: #FFFFFF;
-  --color-surface-raised: #FAFAFA;
-  --color-surface-sunk: #F4F4F5;
-
-  --color-border: #E4E4E7;
-
-  --color-intensity-calm: #16A34A;
-  --color-intensity-calm-bg: #F0FDF4;
-  --color-intensity-building: #CA8A04;
-  --color-intensity-building-bg: #FEFCE8;
-  --color-intensity-heavy: #EA580C;
-  --color-intensity-heavy-bg: #FFF7ED;
-  --color-intensity-tsunami: #DC2626;
-  --color-intensity-tsunami-bg: #FEF2F2;
+  --color-cream:   #F4EFE6;
+  --color-paper:   #FBF8F2;
+  --color-ink:     #0A1F2E;
+  --color-ink-dim: #5A6B78;
+  --color-rule:    #E8E0D2;
+  --color-amber:   #D88A0E;
+  --color-teal:    #2E7E80;
+  --color-coral:   #D9614B;
+  --color-bar:     #7E9AA8;
 }
 
 body {
-  background: #FFFFFF;
-  color: #09090B;
+  background: #F4EFE6;
+  color: #0A1F2E;
 }
 
 svg:focus,
