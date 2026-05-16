@@ -1,8 +1,3 @@
-export const nav = {
-  brand: "Brod Alarm",
-  home: "Početna",
-  login: "Prijava",
-};
 
 export const home = {
   dateLabel: (city: string) => `DANAS · ${city.toUpperCase()}`,
@@ -13,7 +8,7 @@ export const home = {
 
 export const personas = {
   business: {
-    title: "Radim u turizmu",
+    title: "Radim u Splitu",
     subtitle: "Kad mogu očekivati više gostiju?",
     href: "/business",
   },
@@ -40,7 +35,7 @@ export function crowdLevel(load: number): string {
   if (load < 500) return "Uglavnom prazno"
   if (load < 2000) return "Malo gužve"
   if (load < 3500) return "Uglavnom gužva"
-  if (load < 5000) return "Jako gužve"
+  if (load < 5000) return "Jaka gužva"
   return "Najveća gužva"
 }
 

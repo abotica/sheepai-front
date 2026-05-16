@@ -2,7 +2,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter);
-  --font-display: var(--font-fraunces);
+  --font-display: var(--font-inter);
   --font-mono: var(--font-mono);
 
   --color-cream:   #F4EFE6;
