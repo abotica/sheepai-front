@@ -80,7 +80,8 @@ export function CrowdChart() {
           </div>
         </div>
 
-        <div className="relative overflow-hidden" style={{ height: 160 }}>
+        {/* Explicit height + minWidth so ResponsiveContainer never measures -1×-1 (SSR/hydration). */}
+        <div className="relative h-40 w-full min-w-0 overflow-hidden">
           {activeItem && activeBarPos && (
             <div
               className="absolute top-0 z-10 pointer-events-none"
@@ -96,7 +97,7 @@ export function CrowdChart() {
               </div>
             </div>
           )}
-          <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+          <ResponsiveContainer width="100%" height={160} minWidth={0}>
             <BarChart
               data={data}
               barCategoryGap={5}

@@ -21,20 +21,12 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <div className="flex items-center gap-6">
-          <Link
-            href="/"
-            className="font-sans text-[13px] font-semibold text-ink min-h-[44px] flex items-center"
-          >
-            {nav.home}
-          </Link>
-          <Link
-            href="/login"
-            className="font-sans text-[13px] text-ink-dim min-h-[44px] flex items-center"
-          >
-            {nav.login}
-          </Link>
-        </div>
+        <Link
+          href="/"
+          className="font-sans text-[13px] font-semibold text-ink min-h-[44px] flex items-center"
+        >
+          {nav.home}
+        </Link>
       </div>
     </nav>
   );
