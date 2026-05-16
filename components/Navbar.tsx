@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Ship } from "lucide-react";
-import { nav } from "@/lib/copy";
+import Image from "next/image";
+import { MapPin } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -9,31 +9,19 @@ export default function Navbar() {
       style={{ backgroundColor: "rgba(244,239,230,0.85)" }}
     >
       <div className="px-5 h-14 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-ink flex items-center justify-center shrink-0">
-            <Ship size={15} color="#D88A0E" strokeWidth={1.75} />
-          </div>
-          <span
-            className="font-display font-semibold text-[17px] text-ink"
-            style={{ letterSpacing: "-0.3px" }}
-          >
-            {nav.brand}
-          </span>
+        <Link href="/" aria-label="Home" className="flex items-center">
+          <Image
+            src="/kruzer_logo.svg"
+            alt="Kruzer logo"
+            width={120}
+            height={32}
+            priority
+          />
         </Link>
 
-        <div className="flex items-center gap-6">
-          <Link
-            href="/"
-            className="font-sans text-[13px] font-semibold text-ink min-h-[44px] flex items-center"
-          >
-            {nav.home}
-          </Link>
-          <Link
-            href="/login"
-            className="font-sans text-[13px] text-ink-dim min-h-[44px] flex items-center"
-          >
-            {nav.login}
-          </Link>
+        <div className="flex items-center gap-1">
+          <MapPin size={13} color="#0A1F2E" strokeWidth={2} />
+          <span className="font-sans text-[13px] font-medium text-ink">Split</span>
         </div>
       </div>
     </nav>

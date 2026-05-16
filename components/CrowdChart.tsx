@@ -25,13 +25,6 @@ const data = [
 const maxLoad = Math.max(...data.map(d => d.load))
 const CURRENT_HOUR = '11'
 
-function toAmPm(hour: string): string {
-  const h = parseInt(hour, 10)
-  if (h === 0) return '12AM'
-  if (h < 12) return `${h}AM`
-  if (h === 12) return '12PM'
-  return `${h - 12}PM`
-}
 
 type ShapeProps = {
   x?: number
@@ -91,7 +84,7 @@ export function CrowdChart() {
             >
               <div className="flex items-center gap-1 whitespace-nowrap">
                 <Users size={11} color="#1E88E5" />
-                <span className="font-sans text-[11px] font-semibold text-ink">{toAmPm(activeItem.hour)}:</span>
+                <span className="font-sans text-[11px] font-semibold text-ink">{activeItem.hour}h:</span>
                 <span className="font-sans text-[11px] text-ink-dim">{crowdLevel(activeItem.load)}</span>
               </div>
             </div>
