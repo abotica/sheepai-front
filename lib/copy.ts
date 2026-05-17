@@ -61,6 +61,42 @@ export const newsletter = {
     "Prijavom prihvaćaš primanje obavijesti o brodovima. Odjava bit će u svakom mailu.",
 };
 
+/** Daily cron digest email (Resend). Strings only — HTML lives in `lib/newsletter-digest-email.ts`. */
+export const newsletterDigest = {
+  kicker: "Kad će kruzer · Split",
+  timeUnknown: "—",
+  colShip: "Brod",
+  colLine: "Linija",
+  colArrival: "Dolazak",
+  colDeparture: "Odlazak",
+  colPassengers: "Putnika",
+  emptyDayBody:
+    "Po rasporedu za danas nema najavljenih kruzera u luci Split.",
+  footerLegal:
+    "Prijavljen si na dnevni sažetak kruzera u luci Split. Za odjavu koristi poveznicu na dnu poruke ako je dostupna.",
+  openApp: "Otvori KadĆeKruzer?",
+  subjectNoShips: (dateHr: string) =>
+    `Split · ${dateHr} · Nema najavljenih kruzera`,
+  subjectWithShips: (dateHr: string, count: number, paxFormatted: string) =>
+    count === 1
+      ? `Split · ${dateHr} · 1 kruzer · uk. ${paxFormatted} putnika`
+      : `Split · ${dateHr} · ${count} kruzera · uk. ${paxFormatted} putnika`,
+  summaryNoShips: (dateHr: string) =>
+    `${dateHr}: nema najavljenih kruzera u luci.`,
+  summaryWithShips: (dateHr: string, count: number, paxFormatted: string) =>
+    count === 1
+      ? `${dateHr}: 1 kruzer u luci · ukupno ${paxFormatted} putnika.`
+      : `${dateHr}: ${count} kruzera u luci · ukupno ${paxFormatted} putnika.`,
+  textShipLine: (
+    ship: string,
+    line: string,
+    arrival: string,
+    departure: string,
+    pax: string,
+  ) =>
+    `• ${ship} (${line}) — dolazak ${arrival}, odlazak ${departure}, ${pax} putnika`,
+};
+
 export const forecast = {
   heading: "Sljedećih 7 dana",
   totalLabel: (total: number) => `uk. ${total.toLocaleString("hr-HR")} pax`,
