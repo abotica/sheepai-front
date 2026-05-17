@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brod Alarm",
+  title: "KadĆeKruzer",
   description: "Gužve u Splitu",
 };
 

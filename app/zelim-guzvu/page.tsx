@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PersonaPageClient } from "@/components/persona/PersonaPageClient";
 
 export const metadata: Metadata = {
-  title: "Želim gužvu · Brod Alarm",
+  title: "Želim gužvu · KadĆeKruzer",
   description: "Pronađi vrh gužve — kad dolaze gosti, gdje i koliko ih ima.",
 };
 
